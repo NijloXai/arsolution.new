@@ -1,0 +1,209 @@
+/* =========================
+   SERVICE SCOPE - Perimetre des prestations
+   Grid de cartes avec icones
+   ========================= */
+
+.section {
+  padding: var(--spacing-16) 0;
+  background: var(--color-cream);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-10);
+  contain: layout;
+}
+
+/* Carte */
+.card {
+  position: relative;
+  padding: var(--spacing-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-luxe);
+  animation: fadeSlideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  will-change: transform, box-shadow;
+}
+
+/* Icon wrapper */
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--spacing-5);
+  background: var(--color-accent-light);
+  border-radius: var(--radius-xl);
+  color: var(--color-accent);
+  transition: all var(--transition-smooth);
+}
+
+.card:hover .cardIcon {
+  background: var(--color-accent);
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-3);
+  letter-spacing: var(--tracking-tight);
+}
+
+.cardDescription {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Lien interne */
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+
+.cardLink:hover {
+  color: var(--color-accent-hover);
+  gap: var(--spacing-3);
+}
+
+.cardLink svg {
+  transition: transform var(--transition-smooth);
+}
+
+.cardLink:hover svg {
+  transform: translateX(4px);
+}
+
+/* Note de coordination */
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-10);
+  padding: var(--spacing-5);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-primary);
+}
+
+.noteIcon {
+  flex-shrink: 0;
+  font-weight: var(--font-bold);
+  color: var(--color-accent);
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-20) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .card {
+    padding: var(--spacing-8) var(--spacing-8);
+  }
+
+  .note {
+    padding: var(--spacing-6);
+  }
+}
+
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--spacing-24) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    padding: var(--spacing-8);
+  }
+
+  .cardIcon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cardIcon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .cardTitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    opacity: 1;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .cardIcon {
+    transform: none;
+  }
+
+  .cardLink:hover svg {
+    transform: none;
+  }
+}

@@ -1,0 +1,251 @@
+/* =========================
+   SERVICE PUBLIC MARKETS - Bloc Marches Publics
+   Section avec fond sombre (rupture visuelle)
+   ========================= */
+
+.section {
+  position: relative;
+  padding: var(--spacing-16) 0;
+  background: var(--gradient-hero);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* Decorative elements */
+.decorativeElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decorativeElements::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 60%;
+  height: 160%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 152, 90, 0.08) 0%,
+    transparent 60%
+  );
+}
+
+.decorativeElements::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 40%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 152, 90, 0.05) 0%,
+    transparent 60%
+  );
+}
+
+/* =========================
+   CONTENT LAYOUT
+   ========================= */
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+/* Icon column */
+.iconColumn {
+  display: flex;
+  justify-content: center;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: rgba(201, 152, 90, 0.15);
+  border: 2px solid rgba(201, 152, 90, 0.3);
+  border-radius: var(--radius-2xl);
+  color: var(--color-accent);
+}
+
+/* Text column */
+.textColumn {
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-4);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-4);
+  letter-spacing: var(--tracking-elegant);
+}
+
+.description {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   ARGUMENTS LIST
+   ========================= */
+
+.arguments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-8) 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.argument {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+}
+
+.argumentIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(201, 152, 90, 0.2);
+  border-radius: 50%;
+  color: var(--color-accent);
+}
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-20) 0;
+  }
+
+  .content {
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-12);
+    text-align: left;
+  }
+
+  .iconWrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .iconWrapper svg {
+    width: 64px;
+    height: 64px;
+  }
+
+  .textColumn {
+    text-align: left;
+  }
+
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .description {
+    font-size: var(--text-lg);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .arguments {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cta {
+    justify-content: flex-start;
+  }
+}
+
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--spacing-24) 0;
+  }
+
+  .content {
+    gap: var(--spacing-16);
+  }
+
+  .iconWrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .iconWrapper svg {
+    width: 72px;
+    height: 72px;
+  }
+
+  .arguments {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-3) var(--spacing-8);
+    max-width: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Pas d'animations specifiques */
+}
