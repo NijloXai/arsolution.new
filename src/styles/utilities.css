@@ -320,17 +320,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
   background: var(--color-accent-light);
   color: var(--color-accent);
 }
 
 .icon-wrapper--lg {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-2xl);
 }
 
 .icon-wrapper--primary {

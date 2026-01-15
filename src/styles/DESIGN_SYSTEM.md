@@ -325,9 +325,73 @@ Pour creer du rythme visuel:
 - Section 3: `--color-background-alt` (champagne)
 - Section speciale: `--gradient-hero` (teal sombre)
 
+### Lazy Loading avec Skeleton
+```tsx
+import dynamic from 'next/dynamic';
+import SectionSkeleton from '@/components/ui/SectionSkeleton/SectionSkeleton';
+
+const MySection = dynamic(
+  () => import('@/components/sections/MySection/MySection'),
+  { loading: () => <SectionSkeleton height="400px" /> }
+);
+```
+
 ---
 
-## 11. COMPOSANTS REUTILISABLES
+## 11. ICON WRAPPER
+
+### Tailles Standard
+```css
+/* Taille de base - 56px */
+.icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);  /* 28px */
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* Taille large - 72px */
+.icon-wrapper--lg {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-2xl);  /* 36px */
+}
+
+/* Variante primary */
+.icon-wrapper--primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+```
+
+---
+
+## 12. GLASSMORPHISM
+
+### Pattern Standard
+```css
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-dark {
+  background: rgba(20, 67, 74, 0.85);
+  backdrop-filter: blur(10px);
+}
+```
+
+### Usage
+- **Hero badges**: Sur fond gradient-hero pour effet flottant
+- **Eyebrow labels**: Pour mise en avant subtile
+- **Overlays**: Sur images pour texte lisible
+
+---
+
+## 13. COMPOSANTS REUTILISABLES
 
 ### Liste des Composants UI
 | Composant | Chemin | Usage |
@@ -336,6 +400,8 @@ Pour creer du rythme visuel:
 | Container | `@/components/ui/Container` | Wrapper avec max-width |
 | SectionTitle | `@/components/ui/SectionTitle` | Titres de sections |
 | ImagePlaceholder | `@/components/ui/ImagePlaceholder` | Placeholder images |
+| SectionSkeleton | `@/components/ui/SectionSkeleton` | Skeleton loader pour lazy loading |
+| OptimizedImage | `@/components/ui/OptimizedImage` | Image optimisee avec hover scale |
 
 ### Liste des Composants Layout
 | Composant | Chemin | Usage |
@@ -343,9 +409,34 @@ Pour creer du rythme visuel:
 | Header | `@/components/layout/Header` | Navigation principale |
 | Footer | `@/components/layout/Footer` | Pied de page |
 
+### Liste des Sections (Page Accueil)
+| Section | Chemin | Description |
+|---------|--------|-------------|
+| Hero | `@/components/sections/Hero` | Hero principal avec gradient teal |
+| TrustBar | `@/components/sections/TrustBar` | Indicateurs de confiance (projets, avis, etc.) |
+| ProfileCards | `@/components/sections/ProfileCards` | Cartes profil particuliers/professionnels |
+| ServicesPreview | `@/components/sections/ServicesPreview` | Apercu des services |
+| PortfolioPreview | `@/components/sections/PortfolioPreview` | Galerie before/after |
+| WhyUs | `@/components/sections/WhyUs` | Arguments differenciants |
+| ProcessSteps | `@/components/sections/ProcessSteps` | Etapes du processus |
+| PublicMarkets | `@/components/sections/PublicMarkets` | Marches publics |
+| Reviews | `@/components/sections/Reviews` | Avis clients Google |
+| InterventionZone | `@/components/sections/InterventionZone` | Carte zone d'intervention |
+| FAQ | `@/components/sections/FAQ` | Questions frequentes |
+| CTAFinal | `@/components/sections/CTAFinal` | Formulaire de contact final |
+
+### Liste des Sections (Page Services)
+| Section | Chemin | Description |
+|---------|--------|-------------|
+| ServicesHero | `@/components/sections/ServicesHero` | Hero page services avec glassmorphism |
+| ServicesGrid | `@/components/sections/ServicesGrid` | Grille des services detailles |
+| PublicMarketsEntry | `@/components/sections/PublicMarketsEntry` | Bloc marches publics (fond sombre) |
+| ServicesGallery | `@/components/sections/ServicesGallery` | Mini portfolio realisations |
+| ServicesFAQ | `@/components/sections/ServicesFAQ` | FAQ specifique services |
+
 ---
 
-## 12. ACCESSIBILITE
+## 14. ACCESSIBILITE
 
 ### Focus
 ```css
@@ -369,7 +460,7 @@ Toujours inclure:
 
 ---
 
-## 13. CONVENTIONS DE NOMMAGE
+## 15. CONVENTIONS DE NOMMAGE
 
 ### Fichiers CSS
 - Utiliser CSS Modules: `ComponentName.module.css`
@@ -389,7 +480,43 @@ src/
 
 ---
 
-## 14. CHECKLIST NOUVELLE PAGE
+## 16. STRUCTURE DES PAGES
+
+### Page Accueil (`/`)
+```
+Header
+Hero                    [gradient-hero - teal sombre]
+TrustBar                [champagne]
+ProfileCards            [surface - blanc]
+ServicesPreview         [cream]
+PortfolioPreview        [cream]
+WhyUs                   [surface - blanc]
+ProcessSteps            [cream]
+PublicMarkets           [surface - blanc]
+Reviews                 [cream]
+InterventionZone        [surface - blanc]
+FAQ                     [champagne]
+CTAFinal                [gradient-hero - teal sombre]
+Footer
+```
+
+### Page Services (`/services`)
+```
+Header
+ServicesHero            [gradient-hero - teal sombre]
+ServicesGrid            [cream]
+PublicMarketsEntry      [primary - teal sombre] *rupture visuelle*
+ProcessSteps            [cream]
+ServicesGallery         [surface - blanc]
+WhyUs                   [surface - blanc]
+ServicesFAQ             [champagne]
+CTAFinal                [gradient-hero - teal sombre]
+Footer
+```
+
+---
+
+## 17. CHECKLIST NOUVELLE PAGE
 
 - [ ] Utiliser le composant `Container` pour le max-width
 - [ ] Utiliser `SectionTitle` pour les titres de sections
@@ -400,3 +527,5 @@ src/
 - [ ] Tester le responsive (mobile, tablet, desktop)
 - [ ] Verifier l'accessibilite (focus, contraste, reduced motion)
 - [ ] Utiliser les ombres appropriees pour la profondeur
+- [ ] Implementer le lazy loading pour les sections below-the-fold
+- [ ] Utiliser `--spacing-X` (jamais `--space-X`)

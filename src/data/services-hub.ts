@@ -2,13 +2,15 @@
    Donnees enrichies pour la page Services Hub
    ========================= */
 
+import type { ServiceIconType } from '@/lib/types';
+
 // Caracteristiques detaillees par service
 export interface ServiceDetail {
   id: string;
   title: string;
   benefit: string;
   features: string[];
-  icon: string;
+  icon: ServiceIconType;
   href: string;
   ctaText: string;
   ctaHref: string;

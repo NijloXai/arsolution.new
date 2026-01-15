@@ -4,32 +4,20 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-}
-
-/* Variantes */
-.light {
-  background-color: var(--color-background-alt);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-100) 0%,
+    var(--color-gray-200) 100%
+  );
+  border-radius: var(--radius-lg);
   color: var(--color-gray-400);
 }
 
-.dark {
-  background-color: var(--color-primary);
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* Icône */
 .icon {
-  width: 48px;
-  height: 48px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
-/* Texte */
 .text {
   font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 500;
 }

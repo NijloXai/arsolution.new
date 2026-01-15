@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
+import { ChevronDownIcon } from '@/components/icons/Icons';
 import { servicesFAQ } from '@/data/services-hub';
 import styles from './ServicesFAQ.module.css';
 
@@ -36,7 +37,10 @@ export default function ServicesFAQ() {
               >
                 <span>{item.question}</span>
                 <span className={styles.chevronWrapper}>
-                  <ChevronIcon isOpen={openId === item.id} />
+                  <ChevronDownIcon
+                    size={20}
+                    className={`${styles.chevron} ${openId === item.id ? styles.chevronOpen : ''}`}
+                  />
                 </span>
               </button>
               <div
@@ -52,23 +56,5 @@ export default function ServicesFAQ() {
         </div>
       </Container>
     </section>
-  );
-}
-
-function ChevronIcon({ isOpen }: { isOpen: boolean }) {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}
-    >
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
   );
 }

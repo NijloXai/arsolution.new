@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import Button from '@/components/ui/Button/Button';
+import { LocationIcon } from '@/components/icons/Icons';
 import BeforeAfterSlider from './BeforeAfterSlider';
 import { projects } from '@/data/projects';
 import styles from './PortfolioPreview.module.css';
@@ -30,7 +31,7 @@ export default function PortfolioPreview() {
               <span className={styles.category}>{activeProject.category}</span>
               <h3 className={styles.projectTitle}>{activeProject.title}</h3>
               <p className={styles.projectLocation}>
-                <LocationIcon />
+                <LocationIcon size={16} />
                 {activeProject.location}
               </p>
             </div>
@@ -60,23 +61,5 @@ export default function PortfolioPreview() {
         </div>
       </Container>
     </section>
-  );
-}
-
-function LocationIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
   );
 }

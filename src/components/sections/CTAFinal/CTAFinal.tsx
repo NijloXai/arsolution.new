@@ -3,7 +3,10 @@
 import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import Button from '@/components/ui/Button/Button';
+import { CheckCircleIcon } from '@/components/icons/Icons';
 import styles from './CTAFinal.module.css';
+
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 const projectTypes = [
   { value: '', label: 'Type de projet' },
@@ -23,6 +26,8 @@ export default function CTAFinal() {
     postalCode: '',
     projectType: '',
   });
+  const [status, setStatus] = useState<FormStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -31,12 +36,46 @@ export default function CTAFinal() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Reset error state when user starts typing
+    if (status === 'error') {
+      setStatus('idle');
+      setErrorMessage('');
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implémenter l'envoi du formulaire
-    console.log('Form submitted:', formData);
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue');
+      }
+
+      setStatus('success');
+      // Reset form after success
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        postalCode: '',
+        projectType: '',
+      });
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Une erreur est survenue. Veuillez réessayer.'
+      );
+    }
   };
 
   return (
@@ -51,15 +90,15 @@ export default function CTAFinal() {
             </p>
             <ul className={styles.benefits}>
               <li>
-                <CheckIcon />
+                <CheckCircleIcon size={20} />
                 <span>Devis gratuit et sans engagement</span>
               </li>
               <li>
-                <CheckIcon />
+                <CheckCircleIcon size={20} />
                 <span>Réponse sous 48h ouvrées</span>
               </li>
               <li>
-                <CheckIcon />
+                <CheckCircleIcon size={20} />
                 <span>Visite technique sur site</span>
               </li>
             </ul>
@@ -162,8 +201,29 @@ export default function CTAFinal() {
               </div>
             </div>
 
-            <Button type="submit" variant="primary" size="lg" fullWidth>
-              Recevoir mon devis gratuit
+            {/* Message de succès */}
+            {status === 'success' && (
+              <div className={styles.successMessage}>
+                <CheckCircleIcon size={24} />
+                <p>Votre demande a été envoyée avec succès ! Nous vous contacterons sous 48h.</p>
+              </div>
+            )}
+
+            {/* Message d'erreur */}
+            {status === 'error' && errorMessage && (
+              <div className={styles.errorMessage}>
+                <p>{errorMessage}</p>
+              </div>
+            )}
+
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              fullWidth
+              disabled={status === 'loading' || status === 'success'}
+            >
+              {status === 'loading' ? 'Envoi en cours...' : 'Recevoir mon devis gratuit'}
             </Button>
 
             <p className={styles.formNote}>
@@ -174,23 +234,5 @@ export default function CTAFinal() {
         </div>
       </Container>
     </section>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-      <polyline points="22 4 12 14.01 9 11.01" />
-    </svg>
   );
 }

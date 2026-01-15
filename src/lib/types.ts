@@ -40,12 +40,15 @@ export interface Profile {
   isHighlighted?: boolean;
 }
 
+// Types d'icônes services
+export type ServiceIconType = 'wall' | 'insulation' | 'layout' | 'paint' | 'finish';
+
 // Services
 export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: ServiceIconType;
   href: string;
   ctaHref?: string;
 }

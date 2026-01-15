@@ -1,14 +1,45 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Header from '@/components/layout/Header/Header';
-import Footer from '@/components/layout/Footer/Footer';
 import ServicesHero from '@/components/sections/ServicesHero/ServicesHero';
 import ServicesGrid from '@/components/sections/ServicesGrid/ServicesGrid';
-import PublicMarketsEntry from '@/components/sections/PublicMarketsEntry/PublicMarketsEntry';
-import ProcessSteps from '@/components/sections/ProcessSteps/ProcessSteps';
-import ServicesGallery from '@/components/sections/ServicesGallery/ServicesGallery';
-import WhyUs from '@/components/sections/WhyUs/WhyUs';
-import ServicesFAQ from '@/components/sections/ServicesFAQ/ServicesFAQ';
-import CTAFinal from '@/components/sections/CTAFinal/CTAFinal';
+import SectionSkeleton from '@/components/ui/SectionSkeleton/SectionSkeleton';
+
+// Lazy load des composants below-the-fold
+const PublicMarketsEntry = dynamic(
+  () => import('@/components/sections/PublicMarketsEntry/PublicMarketsEntry'),
+  { loading: () => <SectionSkeleton height="400px" /> }
+);
+
+const ProcessSteps = dynamic(
+  () => import('@/components/sections/ProcessSteps/ProcessSteps'),
+  { loading: () => <SectionSkeleton height="500px" /> }
+);
+
+const ServicesGallery = dynamic(
+  () => import('@/components/sections/ServicesGallery/ServicesGallery'),
+  { loading: () => <SectionSkeleton height="600px" /> }
+);
+
+const WhyUs = dynamic(
+  () => import('@/components/sections/WhyUs/WhyUs'),
+  { loading: () => <SectionSkeleton height="400px" /> }
+);
+
+const ServicesFAQ = dynamic(
+  () => import('@/components/sections/ServicesFAQ/ServicesFAQ'),
+  { loading: () => <SectionSkeleton height="400px" /> }
+);
+
+const CTAFinal = dynamic(
+  () => import('@/components/sections/CTAFinal/CTAFinal'),
+  { loading: () => <SectionSkeleton height="500px" /> }
+);
+
+const Footer = dynamic(
+  () => import('@/components/layout/Footer/Footer'),
+  { loading: () => <SectionSkeleton height="300px" /> }
+);
 
 export const metadata: Metadata = {
   title: 'Nos Services',

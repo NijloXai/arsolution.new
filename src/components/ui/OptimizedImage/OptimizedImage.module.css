@@ -1,0 +1,21 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.wrapper:hover .image {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper:hover .image {
+    transform: none;
+  }
+}
