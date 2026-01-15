@@ -1,0 +1,133 @@
+.section {
+  padding: var(--section-padding-mobile) 0;
+  background-color: var(--color-gray-50);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+}
+
+/* Info items */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+}
+
+.infoItem svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-top: 2px;
+}
+
+.infoTitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-1);
+}
+
+.infoText {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+/* Cities */
+.cities {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+}
+
+.department {
+  margin-bottom: var(--spacing-6);
+}
+
+.department:last-of-type {
+  margin-bottom: var(--spacing-4);
+}
+
+.departmentTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-3);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+}
+
+.cityList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-2);
+}
+
+.city {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+}
+
+.city svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.moreText {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  font-style: italic;
+  text-align: center;
+  margin-top: var(--spacing-4);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-padding-tablet) 0;
+  }
+
+  .info {
+    flex-direction: row;
+    gap: var(--spacing-8);
+  }
+
+  .cityList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--section-padding-desktop) 0;
+  }
+
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-16);
+  }
+
+  .text {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .cities {
+    flex: 1;
+  }
+}

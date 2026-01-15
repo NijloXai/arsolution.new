@@ -1,0 +1,143 @@
+.section {
+  padding: var(--section-padding-mobile) 0;
+  background-color: var(--color-white);
+}
+
+/* Stats Bar */
+.statsBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-8);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.ratingValue {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-secondary);
+}
+
+.stars {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.starFilled {
+  color: #FBBC05;
+}
+
+.starEmpty {
+  color: var(--color-gray-300);
+}
+
+.statsInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.totalReviews {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-600);
+}
+
+.source {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+.card {
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  border-radius: 50%;
+}
+
+.author {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-1);
+}
+
+.cardStars {
+  display: flex;
+  gap: 2px;
+}
+
+.text {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-padding-tablet) 0;
+  }
+
+  .statsBar {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .text {
+    font-size: var(--text-base);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--section-padding-desktop) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

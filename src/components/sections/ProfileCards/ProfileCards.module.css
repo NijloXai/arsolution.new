@@ -1,0 +1,119 @@
+.section {
+  padding: var(--section-padding-mobile) 0;
+  background-color: var(--color-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Carte mise en avant - Marchés Publics */
+.card.highlighted {
+  background-color: var(--color-public-bg);
+  border-color: var(--color-public);
+}
+
+.card.highlighted .iconWrapper {
+  background-color: var(--color-public);
+}
+
+.card.highlighted .iconWrapper svg {
+  color: var(--color-white);
+}
+
+.card.highlighted .cardTitle {
+  color: var(--color-public);
+}
+
+.card.highlighted .cta {
+  color: var(--color-public);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+}
+
+.iconWrapper svg {
+  color: var(--color-primary);
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-2);
+}
+
+.cardDescription {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--spacing-4);
+  flex-grow: 1;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  margin-top: auto;
+  transition: gap var(--transition-fast);
+}
+
+.card:hover .cta {
+  gap: var(--spacing-3);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-padding-tablet) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cardTitle {
+    font-size: var(--text-xl);
+  }
+
+  .cardDescription {
+    font-size: var(--text-base);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--section-padding-desktop) 0;
+  }
+}

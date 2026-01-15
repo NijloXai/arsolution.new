@@ -1,0 +1,120 @@
+.section {
+  padding: var(--section-padding-mobile) 0;
+  background-color: var(--color-gray-50);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-10);
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+}
+
+.iconWrapper svg {
+  color: var(--color-primary);
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-2);
+}
+
+.cardDescription {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--spacing-4);
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+}
+
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.learnMore:hover {
+  gap: var(--spacing-3);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-padding-tablet) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardTitle {
+    font-size: var(--text-xl);
+  }
+
+  .cardDescription {
+    font-size: var(--text-base);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--section-padding-desktop) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Desktop - 5 colonnes pour les 5 services */
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-4);
+  }
+
+  .card {
+    padding: var(--spacing-5);
+  }
+}

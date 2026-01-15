@@ -1,0 +1,37 @@
+.wrapper {
+  margin-bottom: var(--spacing-8);
+}
+
+.title {
+  margin-bottom: var(--spacing-3);
+}
+
+.subtitle {
+  color: var(--color-gray-600);
+  font-size: var(--text-lg);
+  max-width: 600px;
+}
+
+/* Alignement */
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin-bottom: var(--spacing-12);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+  }
+}
