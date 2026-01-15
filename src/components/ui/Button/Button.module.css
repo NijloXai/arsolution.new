@@ -1,3 +1,7 @@
+/* =========================
+   BUTTON - Style Luxe Artisanal
+   ========================= */
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -7,9 +11,12 @@
   font-weight: var(--font-semibold);
   text-align: center;
   border-radius: var(--radius-full);
-  transition: all var(--transition-smooth);
+  transition: all var(--transition-luxe);
   cursor: pointer;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
 }
 
 /* Tailles */
@@ -36,9 +43,11 @@
 }
 
 .primary:hover {
-  background-color: var(--color-accent);
+  background: var(--gradient-gold);
   color: var(--color-white);
   border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-soft);
 }
 
 .secondary {
@@ -51,6 +60,8 @@
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .outline {
@@ -62,18 +73,22 @@
 .outline:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-/* Version remplie pour cas spéciaux */
+/* Version remplie pour cas spéciaux - Style Premium */
 .filled {
-  background-color: var(--color-accent);
+  background: var(--gradient-gold);
   color: var(--color-white);
-  border: 2px solid var(--color-accent);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-gold-soft);
 }
 
 .filled:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
+  background: var(--gradient-gold-intense);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
 }
 
 .ghost {
@@ -83,7 +98,8 @@
 }
 
 .ghost:hover {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
 }
 
 /* États */
@@ -102,4 +118,21 @@
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--color-accent-light);
+}
+
+/* Active state - press effect */
+.button:active:not(.disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Accessibilité - Réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
 }

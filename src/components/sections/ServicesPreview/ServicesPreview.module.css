@@ -1,6 +1,11 @@
+/* =========================
+   SERVICES PREVIEW - Style Luxe Artisanal
+   ========================= */
+
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-background-alt);
+  background: var(--color-cream);
+  position: relative;
 }
 
 .grid {
@@ -11,41 +16,74 @@
 }
 
 .card {
-  background-color: var(--color-surface);
+  position: relative;
+  background: var(--color-surface);
   border-radius: var(--radius-xl);
   padding: var(--spacing-6);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-gray-200);
+  transition: all var(--transition-luxe);
+  overflow: hidden;
+}
+
+/* Accent diagonal au hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: var(--gradient-gold);
+  transform: translate(60%, -60%) rotate(45deg);
+  opacity: 0;
+  transition: opacity var(--transition-luxe);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(201, 152, 90, 0.3);
+}
+
+.card:hover::before {
+  opacity: 0.08;
 }
 
 .iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  background-color: var(--color-accent-light);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-champagne) 100%);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-5);
+  transition: all var(--transition-luxe);
 }
 
 .iconWrapper svg {
   color: var(--color-accent);
+  transition: color var(--transition-smooth);
+}
+
+.card:hover .iconWrapper {
+  background: var(--gradient-gold);
+  box-shadow: var(--shadow-gold-soft);
+}
+
+.card:hover .iconWrapper svg {
+  color: white;
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   letter-spacing: var(--tracking-tight);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-smooth);
 }
 
 .card:hover .cardTitle {
@@ -56,7 +94,7 @@
   font-size: var(--text-sm);
   color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-5);
 }
 
 .cardActions {
@@ -65,14 +103,26 @@
 }
 
 .learnMore {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-2);
   font-size: var(--text-sm);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semibold);
   color: var(--color-accent);
   text-decoration: none;
-  transition: gap var(--transition-fast);
+  transition: all var(--transition-smooth);
+}
+
+.learnMore::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: width var(--transition-smooth);
 }
 
 .learnMore:hover {
@@ -80,12 +130,19 @@
   color: var(--color-accent-hover);
 }
 
+.learnMore:hover::after {
+  width: 100%;
+}
+
 .cta {
   display: flex;
   justify-content: center;
 }
 
-/* Tablet */
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
 @media (min-width: 768px) {
   .section {
     padding: var(--section-padding-tablet) 0;
@@ -93,6 +150,10 @@
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: var(--spacing-8);
   }
 
   .cardTitle {
@@ -104,7 +165,10 @@
   }
 }
 
-/* Desktop */
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
 @media (min-width: 1024px) {
   .section {
     padding: var(--section-padding-desktop) 0;
@@ -113,16 +177,37 @@
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .iconWrapper {
+    width: 64px;
+    height: 64px;
+  }
 }
 
-/* Large Desktop - 5 colonnes pour les 5 services */
+/* =========================
+   RESPONSIVE - Large Desktop
+   ========================= */
+
 @media (min-width: 1280px) {
   .grid {
     grid-template-columns: repeat(5, 1fr);
-    gap: var(--spacing-4);
+    gap: var(--spacing-5);
   }
 
   .card {
-    padding: var(--spacing-5);
+    padding: var(--spacing-6);
+  }
+
+  .iconWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cardTitle {
+    font-size: var(--text-lg);
+  }
+
+  .cardDescription {
+    font-size: var(--text-sm);
   }
 }

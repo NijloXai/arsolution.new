@@ -1,6 +1,12 @@
+/* =========================
+   WHY US - Style Luxe Artisanal
+   Grid asymétrique
+   ========================= */
+
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-surface);
+  background: var(--color-surface);
+  position: relative;
 }
 
 .grid {
@@ -15,39 +21,88 @@
   align-items: center;
   text-align: center;
   padding: var(--spacing-8);
-  background-color: var(--color-background-alt);
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-champagne) 100%);
   border-radius: var(--radius-xl);
-  transition: all var(--transition-smooth);
+  border: 1px solid var(--color-gray-200);
+  transition: all var(--transition-luxe);
+  position: relative;
+}
+
+/* Numéro décoratif */
+.card::before {
+  content: attr(data-number);
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-accent);
+  opacity: 0.1;
+  line-height: 1;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 152, 90, 0.25);
+}
+
+.card:hover::before {
+  opacity: 0.2;
 }
 
 .iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  background-color: var(--color-primary-light);
+  width: 72px;
+  height: 72px;
+  background: var(--color-primary-light);
   border-radius: 50%;
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-5);
+  transition: all var(--transition-luxe);
+  position: relative;
+}
+
+/* Anneau décoratif */
+.iconWrapper::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all var(--transition-luxe);
 }
 
 .iconWrapper svg {
   color: var(--color-primary);
+  transition: all var(--transition-smooth);
+}
+
+.card:hover .iconWrapper {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:hover .iconWrapper::after {
+  opacity: 0.2;
+  inset: -8px;
+}
+
+.card:hover .iconWrapper svg {
+  color: white;
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-primary);
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
   letter-spacing: var(--tracking-tight);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-smooth);
 }
 
 .card:hover .cardTitle {
@@ -61,7 +116,10 @@
   max-width: 280px;
 }
 
-/* Tablet */
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
 @media (min-width: 768px) {
   .section {
     padding: var(--section-padding-tablet) 0;
@@ -77,12 +135,20 @@
     text-align: left;
   }
 
+  .card::before {
+    font-size: var(--text-5xl);
+  }
+
   .cardDescription {
     max-width: none;
   }
 }
 
-/* Desktop */
+/* =========================
+   RESPONSIVE - Desktop
+   Grid asymétrique avec décalage
+   ========================= */
+
 @media (min-width: 1024px) {
   .section {
     padding: var(--section-padding-desktop) 0;
@@ -90,6 +156,30 @@
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-6);
+  }
+
+  /* Décalage asymétrique des cards */
+  .card:nth-child(2) {
+    transform: translateY(var(--spacing-8));
+  }
+
+  .card:nth-child(3) {
+    transform: translateY(var(--spacing-4));
+  }
+
+  .card:nth-child(5) {
+    transform: translateY(var(--spacing-8));
+  }
+
+  .card:nth-child(2):hover,
+  .card:nth-child(3):hover,
+  .card:nth-child(5):hover {
+    transform: translateY(calc(var(--spacing-8) - 4px));
+  }
+
+  .card:nth-child(3):hover {
+    transform: translateY(calc(var(--spacing-4) - 4px));
   }
 
   .cardTitle {
@@ -98,5 +188,10 @@
 
   .cardDescription {
     font-size: var(--text-base);
+  }
+
+  .iconWrapper {
+    width: 80px;
+    height: 80px;
   }
 }

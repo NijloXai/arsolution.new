@@ -1,12 +1,49 @@
+/* =========================
+   CTA FINAL - Style Luxe Artisanal
+   ========================= */
+
 .section {
   padding: var(--section-padding-mobile) 0;
-  background: var(--color-primary);
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Particules dorées décoratives */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(201, 152, 90, 0.2) 2px, transparent 2px),
+    radial-gradient(circle at 85% 75%, rgba(201, 152, 90, 0.15) 3px, transparent 3px),
+    radial-gradient(circle at 45% 85%, rgba(201, 152, 90, 0.1) 2px, transparent 2px);
+  background-size: 100px 100px, 150px 150px, 80px 80px;
+  pointer-events: none;
+}
+
+/* Glow radial */
+.section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 80%;
+  height: 150%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 152, 90, 0.1) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-10);
+  position: relative;
+  z-index: 1;
 }
 
 /* Texte */
@@ -20,7 +57,11 @@
   font-weight: var(--font-bold);
   color: var(--color-white);
   margin-bottom: var(--spacing-4);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: var(--tracking-elegant);
+}
+
+.titleAccent {
+  color: var(--color-accent);
 }
 
 .subtitle {
@@ -43,6 +84,7 @@
   align-items: center;
   gap: var(--spacing-3);
   font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .benefits svg {
@@ -52,21 +94,48 @@
 
 .publicCta {
   padding-top: var(--spacing-6);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .publicLabel {
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: var(--spacing-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Formulaire */
+/* Formulaire premium */
 .form {
-  background-color: var(--color-surface);
+  background: var(--color-surface);
   border-radius: var(--radius-2xl);
-  padding: var(--spacing-6);
-  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-8);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(201, 152, 90, 0.1);
+  position: relative;
+}
+
+/* Accent doré en haut du formulaire */
+.form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-gold);
+  border-radius: 0 0 var(--radius-full) var(--radius-full);
+}
+
+.formTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
 }
 
 .formGroup {
@@ -93,7 +162,7 @@
   padding: var(--spacing-3) var(--spacing-4);
   font-size: var(--text-base);
   color: var(--color-gray-900);
-  background-color: var(--color-background-alt);
+  background: var(--color-cream);
   border: 2px solid var(--color-gray-200);
   border-radius: var(--radius-lg);
   transition: all var(--transition-smooth);
@@ -103,8 +172,8 @@
 .select:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-light);
-  background-color: var(--color-surface);
+  box-shadow: 0 0 0 4px var(--color-accent-light);
+  background: var(--color-surface);
 }
 
 .input::placeholder {
@@ -114,7 +183,7 @@
 .select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239E9E9E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C9985A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--spacing-3) center;
   background-size: 20px;
@@ -128,7 +197,10 @@
   text-align: center;
 }
 
-/* Tablet */
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
 @media (min-width: 768px) {
   .section {
     padding: var(--section-padding-tablet) 0;
@@ -151,11 +223,14 @@
   }
 
   .form {
-    padding: var(--spacing-8);
+    padding: var(--spacing-10);
   }
 }
 
-/* Desktop */
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
 @media (min-width: 1024px) {
   .section {
     padding: var(--section-padding-desktop) 0;
@@ -169,7 +244,7 @@
 
   .text {
     flex: 1;
-    max-width: 450px;
+    max-width: 480px;
   }
 
   .title {
@@ -178,6 +253,10 @@
 
   .form {
     flex: 1;
-    max-width: 500px;
+    max-width: 520px;
+  }
+
+  .formTitle {
+    font-size: var(--text-2xl);
   }
 }

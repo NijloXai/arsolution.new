@@ -1,31 +1,54 @@
+/* =========================
+   REVIEWS - Style Luxe Artisanal
+   ========================= */
+
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-surface);
+  background: var(--color-surface);
+  position: relative;
 }
 
-/* Stats Bar */
+/* Stats Bar premium */
 .statsBar {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-4);
-  padding: var(--spacing-6);
-  background-color: var(--color-background-alt);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-8);
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-champagne) 100%);
+  border-radius: var(--radius-2xl);
+  margin-bottom: var(--spacing-10);
+  border: 1px solid var(--color-gray-200);
+  position: relative;
+}
+
+/* Icône Google décorative */
+.statsBar::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  width: 32px;
+  height: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.8;
 }
 
 .rating {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
+  gap: var(--spacing-4);
 }
 
 .ratingValue {
   font-family: var(--font-heading);
-  font-size: var(--text-4xl);
+  font-size: var(--text-5xl);
   font-weight: var(--font-bold);
-  color: var(--color-primary);
+  background: var(--gradient-text-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: var(--tracking-tight);
 }
 
@@ -36,6 +59,7 @@
 
 .starFilled {
   color: #FBBC05;
+  filter: drop-shadow(0 2px 4px rgba(251, 188, 5, 0.3));
 }
 
 .starEmpty {
@@ -49,9 +73,9 @@
 }
 
 .totalReviews {
-  font-size: var(--text-base);
-  font-weight: var(--font-medium);
-  color: var(--color-gray-600);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
 }
 
 .source {
@@ -59,10 +83,10 @@
   align-items: center;
   gap: var(--spacing-2);
   font-size: var(--text-sm);
-  color: var(--color-gray-500);
+  color: var(--color-slate);
 }
 
-/* Grid */
+/* Grid des avis */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -70,14 +94,32 @@
 }
 
 .card {
+  position: relative;
   padding: var(--spacing-6);
-  background-color: var(--color-background-alt);
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-surface) 100%);
   border-radius: var(--radius-xl);
-  transition: all var(--transition-smooth);
+  border: 1px solid var(--color-gray-200);
+  transition: all var(--transition-luxe);
+}
+
+/* Quote mark décoratif */
+.card::before {
+  content: '"';
+  position: absolute;
+  top: var(--spacing-4);
+  left: var(--spacing-5);
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--color-accent);
+  opacity: 0.12;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 152, 90, 0.25);
 }
 
 .cardHeader {
@@ -85,28 +127,36 @@
   align-items: center;
   gap: var(--spacing-3);
   margin-bottom: var(--spacing-4);
+  position: relative;
+  z-index: 1;
 }
 
 .avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  background-color: var(--color-accent);
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-gold);
   color: var(--color-white);
+  font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   border-radius: 50%;
+  box-shadow: var(--shadow-gold-soft);
+}
+
+.authorInfo {
+  flex: 1;
 }
 
 .author {
   font-family: var(--font-heading);
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   font-weight: var(--font-semibold);
   color: var(--color-primary);
   margin-bottom: var(--spacing-1);
-  letter-spacing: var(--tracking-normal);
+  letter-spacing: var(--tracking-tight);
 }
 
 .cardStars {
@@ -114,13 +164,24 @@
   gap: 2px;
 }
 
-.text {
-  font-size: var(--text-sm);
-  color: var(--color-gray-600);
-  line-height: var(--leading-relaxed);
+.cardStars svg {
+  width: 16px;
+  height: 16px;
 }
 
-/* Tablet */
+.text {
+  font-size: var(--text-base);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
 @media (min-width: 768px) {
   .section {
     padding: var(--section-padding-tablet) 0;
@@ -129,18 +190,30 @@
   .statsBar {
     flex-direction: row;
     justify-content: center;
+    padding: var(--spacing-10);
+  }
+
+  .ratingValue {
+    font-size: var(--text-6xl);
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .text {
-    font-size: var(--text-base);
+  .card {
+    padding: var(--spacing-8);
+  }
+
+  .card::before {
+    font-size: 5rem;
   }
 }
 
-/* Desktop */
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
 @media (min-width: 1024px) {
   .section {
     padding: var(--section-padding-desktop) 0;
@@ -148,5 +221,10 @@
 
   .grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-5);
+  }
+
+  .card {
+    padding: var(--spacing-6);
   }
 }

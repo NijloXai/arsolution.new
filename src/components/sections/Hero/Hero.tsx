@@ -5,6 +5,9 @@ import styles from './Hero.module.css';
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      {/* Particules décoratives */}
+      <div className={styles.decorativeElements} aria-hidden="true" />
+
       <Container size="xl">
         <div className={styles.content}>
           <div className={styles.text}>

@@ -1,40 +1,99 @@
+/* =========================
+   PORTFOLIO PREVIEW - Style Luxe Artisanal
+   ========================= */
+
 .section {
+  position: relative;
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-background-alt);
+  background: var(--color-cream);
+  overflow: hidden;
+}
+
+/* Éléments décoratifs - coins élégants */
+.section::before,
+.section::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--color-accent-muted);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.section::before {
+  top: var(--spacing-8);
+  left: var(--spacing-8);
+  border-right: none;
+  border-bottom: none;
+}
+
+.section::after {
+  bottom: var(--spacing-8);
+  right: var(--spacing-8);
+  border-left: none;
+  border-top: none;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--spacing-8);
 }
 
-/* Slider wrapper */
+/* Slider wrapper avec cadre décoratif */
 .sliderWrapper {
   position: relative;
 }
 
+/* Cadre doré décoratif autour du slider */
+.sliderWrapper::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border: 2px solid var(--color-accent);
+  border-radius: calc(var(--radius-2xl) + 12px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Info projet stylisée */
 .projectInfo {
-  margin-top: var(--spacing-4);
+  margin-top: var(--spacing-6);
+  padding: var(--spacing-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-gray-200);
 }
 
 .category {
-  display: inline-block;
-  padding: var(--spacing-1) var(--spacing-3);
-  background-color: var(--color-accent-light);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-4);
+  background: var(--color-accent-light);
   color: var(--color-accent);
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   border-radius: var(--radius-full);
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.category::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 .projectTitle {
   font-family: var(--font-heading);
   font-size: var(--text-xl);
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semibold);
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   letter-spacing: var(--tracking-tight);
@@ -45,64 +104,104 @@
   align-items: center;
   gap: var(--spacing-2);
   font-size: var(--text-sm);
-  color: var(--color-gray-600);
+  color: var(--color-slate);
 }
 
 .projectLocation svg {
   color: var(--color-accent);
+  flex-shrink: 0;
 }
 
-/* Navigation */
+/* Navigation projets - Style cards premium */
 .navigation {
   display: flex;
   gap: var(--spacing-3);
   overflow-x: auto;
   padding-bottom: var(--spacing-2);
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.navigation::-webkit-scrollbar {
+  display: none;
 }
 
 .navButton {
+  position: relative;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--spacing-3) var(--spacing-4);
-  background-color: var(--color-surface);
-  border: 2px solid var(--color-gray-200);
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all var(--transition-smooth);
-  min-width: 180px;
+  transition: all var(--transition-luxe);
+  min-width: 200px;
+  overflow: hidden;
+}
+
+/* Barre d'accent au hover/active */
+.navButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--transition-luxe);
 }
 
 .navButton:hover {
   border-color: var(--color-gray-300);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.navButton:hover::before {
+  transform: scaleY(0.5);
 }
 
 .navButton.active {
   border-color: var(--color-accent);
-  background-color: var(--color-accent-light);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-light) 0%,
+    var(--color-surface) 100%
+  );
+  box-shadow: var(--shadow-gold-soft);
+}
+
+.navButton.active::before {
+  transform: scaleY(1);
 }
 
 .navCategory {
   font-size: var(--text-xs);
   color: var(--color-gray-500);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: var(--spacing-1);
+  transition: color var(--transition-smooth);
 }
 
+.navButton:hover .navCategory,
 .navButton.active .navCategory {
   color: var(--color-accent);
 }
 
 .navTitle {
-  font-size: var(--text-sm);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
   font-weight: var(--font-semibold);
   color: var(--color-primary);
   margin-bottom: var(--spacing-1);
   text-align: left;
+  letter-spacing: var(--tracking-tight);
 }
 
 .navLocation {
@@ -114,22 +213,35 @@
 .cta {
   display: flex;
   justify-content: center;
-  margin-top: var(--spacing-8);
+  margin-top: var(--spacing-10);
 }
 
-/* Tablet */
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
 @media (min-width: 768px) {
   .section {
     padding: var(--section-padding-tablet) 0;
   }
 
+  .section::before,
+  .section::after {
+    width: 180px;
+    height: 180px;
+  }
+
   .content {
     flex-direction: row;
-    gap: var(--spacing-8);
+    gap: var(--spacing-10);
   }
 
   .sliderWrapper {
     flex: 2;
+  }
+
+  .sliderWrapper::before {
+    inset: -16px;
   }
 
   .navigation {
@@ -137,21 +249,77 @@
     flex-direction: column;
     overflow-x: visible;
     padding-bottom: 0;
+    max-width: 280px;
   }
 
   .navButton {
     min-width: auto;
     width: 100%;
   }
+
+  .projectInfo {
+    padding: var(--spacing-8);
+  }
 }
 
-/* Desktop */
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
 @media (min-width: 1024px) {
   .section {
     padding: var(--section-padding-desktop) 0;
   }
 
+  .section::before,
+  .section::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  .content {
+    gap: var(--spacing-12);
+  }
+
+  .sliderWrapper::before {
+    inset: -20px;
+  }
+
   .projectTitle {
     font-size: var(--text-2xl);
+  }
+
+  .navigation {
+    max-width: 320px;
+  }
+
+  .navButton {
+    padding: var(--spacing-5) var(--spacing-6);
+  }
+
+  .navTitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* =========================
+   RESPONSIVE - Large Desktop
+   ========================= */
+
+@media (min-width: 1280px) {
+  .section::before {
+    left: var(--spacing-12);
+  }
+
+  .section::after {
+    right: var(--spacing-12);
+  }
+
+  .content {
+    gap: var(--spacing-16);
+  }
+
+  .navigation {
+    max-width: 360px;
   }
 }

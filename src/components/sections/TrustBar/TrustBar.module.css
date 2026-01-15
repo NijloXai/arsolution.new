@@ -1,7 +1,25 @@
+/* =========================
+   TRUST BAR - Style Luxe Artisanal
+   ========================= */
+
 .trustBar {
-  background-color: var(--color-surface);
-  padding: var(--spacing-6) 0;
-  border-bottom: 1px solid var(--color-gray-200);
+  background: var(--color-champagne);
+  padding: var(--spacing-8) 0;
+  border-bottom: 1px solid rgba(201, 152, 90, 0.15);
+  position: relative;
+}
+
+/* Ligne décorative dorée en haut */
+.trustBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-full);
 }
 
 .items {
@@ -15,11 +33,29 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-3);
+  transition: transform var(--transition-smooth);
 }
 
-.item svg {
+.item:hover {
+  transform: translateY(-2px);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--gradient-gold);
+  border-radius: 50%;
   flex-shrink: 0;
-  color: var(--color-accent);
+  box-shadow: var(--shadow-gold-soft);
+}
+
+.iconWrapper svg {
+  color: white;
+  width: 20px;
+  height: 20px;
 }
 
 .content {
@@ -29,22 +65,33 @@
 
 .value {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--color-primary);
+  background: var(--gradient-text-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1.2;
   letter-spacing: var(--tracking-tight);
 }
 
 .label {
   font-size: var(--text-sm);
-  color: var(--color-gray-600);
+  color: var(--color-slate);
+  font-weight: var(--font-medium);
 }
 
-/* Tablet */
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
 @media (min-width: 768px) {
   .trustBar {
-    padding: var(--spacing-8) 0;
+    padding: var(--spacing-10) 0;
+  }
+
+  .trustBar::before {
+    width: 120px;
   }
 
   .items {
@@ -56,13 +103,25 @@
     justify-content: center;
   }
 
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+  }
+
   .value {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
   }
 }
 
-/* Desktop */
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
 @media (min-width: 1024px) {
+  .trustBar::before {
+    width: 150px;
+  }
+
   .items {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -70,7 +129,18 @@
   .item {
     flex-direction: column;
     text-align: center;
-    gap: var(--spacing-2);
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+  }
+
+  .iconWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .iconWrapper svg {
+    width: 24px;
+    height: 24px;
   }
 
   .content {
@@ -78,6 +148,10 @@
   }
 
   .value {
-    font-size: var(--text-2xl);
+    font-size: var(--text-3xl);
+  }
+
+  .label {
+    font-size: var(--text-base);
   }
 }
