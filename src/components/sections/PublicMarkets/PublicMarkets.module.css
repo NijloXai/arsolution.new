@@ -23,10 +23,12 @@
 }
 
 .title {
+  font-family: var(--font-heading);
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
   color: var(--color-white);
   margin-bottom: var(--spacing-4);
+  letter-spacing: var(--tracking-tight);
 }
 
 .subtitle {
@@ -66,10 +68,12 @@
 }
 
 .featureTitle {
+  font-family: var(--font-heading);
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   color: var(--color-white);
   margin-bottom: var(--spacing-1);
+  letter-spacing: var(--tracking-tight);
 }
 
 .featureDescription {
@@ -113,11 +117,13 @@
 }
 
 .statValue {
+  font-family: var(--font-heading);
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
   color: var(--color-white);
   line-height: 1;
   margin-bottom: var(--spacing-2);
+  letter-spacing: var(--tracking-tight);
 }
 
 .statLabel {

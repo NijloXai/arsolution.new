@@ -28,9 +28,11 @@
 }
 
 .logoText {
+  font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
   color: var(--color-primary);
+  letter-spacing: var(--tracking-tight);
 }
 
 .logoText::before {

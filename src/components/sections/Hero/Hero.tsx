@@ -8,8 +8,9 @@ export default function Hero() {
       <Container size="xl">
         <div className={styles.content}>
           <div className={styles.text}>
+            <span className={styles.eyebrow}>Artisan certifié RGE en Alsace</span>
             <h1 className={styles.title}>
-              Travaux de Plâtrerie, Isolation & Finitions à Strasbourg et en Alsace
+              Travaux de <span className={styles.titleAccent}>Plâtrerie</span>, Isolation & Finitions à Strasbourg
             </h1>
             <p className={styles.subtitle}>
               Votre interlocuteur unique pour la rénovation intérieure. Fiabilité,

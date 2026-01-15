@@ -55,11 +55,12 @@
 
   /* =========================
      TYPOGRAPHIE
+     Style Artisanal & Chaleureux
      ========================= */
 
   /* Familles de polices */
   --font-primary: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: var(--font-primary);
+  --font-heading: var(--font-playfair), 'Georgia', 'Times New Roman', serif;
 
   /* Tailles de police (mobile-first) */
   --text-xs: 0.75rem;
@@ -72,6 +73,7 @@
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
   --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
 
   /* Poids de police */
   --font-normal: 400;
@@ -80,10 +82,18 @@
   --font-bold: 700;
 
   /* Hauteurs de ligne */
-  --leading-tight: 1.25;
-  --leading-snug: 1.375;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
   --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-relaxed: 1.7;
+  --leading-loose: 1.85;
+
+  /* Letter spacing pour titres */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
 
   /* =========================
      ESPACEMENTS
