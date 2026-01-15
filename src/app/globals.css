@@ -1,5 +1,7 @@
 /* Import des variables CSS */
 @import '../styles/variables.css';
+/* Import des classes utilitaires */
+@import '../styles/utilities.css';
 
 /* =========================
    RESET & BASE
