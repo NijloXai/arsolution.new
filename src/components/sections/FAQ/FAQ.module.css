@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 }
 
 .list {
@@ -11,9 +11,10 @@
 
 .item {
   border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: border-color var(--transition-fast);
+  transition: all var(--transition-smooth);
+  background-color: var(--color-background-alt);
 }
 
 .item:hover {
@@ -21,7 +22,7 @@
 }
 
 .item.open {
-  border-color: var(--color-primary);
+  border-color: var(--color-accent);
 }
 
 .question {
@@ -34,18 +35,18 @@
   border: none;
   font-size: var(--text-base);
   font-weight: var(--font-medium);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   text-align: left;
   cursor: pointer;
   transition: background-color var(--transition-fast);
 }
 
 .question:hover {
-  background-color: var(--color-gray-50);
+  background-color: var(--color-accent-light);
 }
 
 .item.open .question {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-accent-light);
 }
 
 .chevron {
@@ -56,7 +57,7 @@
 
 .chevronOpen {
   transform: rotate(180deg);
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .answer {

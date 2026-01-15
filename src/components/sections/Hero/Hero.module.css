@@ -2,8 +2,8 @@
   position: relative;
   padding-top: calc(var(--header-height-mobile) + var(--spacing-12));
   padding-bottom: var(--spacing-12);
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #2a4a6e 100%);
-  color: var(--color-white);
+  background: var(--color-background);
+  color: var(--color-gray-900);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -23,22 +23,23 @@
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
-  color: var(--color-white);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-4);
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-gray-600);
   margin-bottom: var(--spacing-6);
 }
 
-/* Bandeau preuves */
+/* Bandeau preuves - Style soft */
 .badges {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-4);
+  gap: var(--spacing-3);
   margin-bottom: var(--spacing-8);
 }
 
@@ -46,17 +47,18 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-3);
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: var(--color-accent-light);
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
+  color: var(--color-primary);
 }
 
 .badge svg {
   width: 18px;
   height: 18px;
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* CTAs */
@@ -79,19 +81,22 @@
   gap: var(--spacing-4);
   width: 100%;
   aspect-ratio: 4/3;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-2xl);
+  color: var(--color-gray-400);
+  box-shadow: var(--shadow-soft);
 }
 
 .imagePlaceholder svg {
-  opacity: 0.5;
+  opacity: 0.6;
+  color: var(--color-primary);
 }
 
 .imagePlaceholder span {
   font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--color-gray-500);
 }
 
 /* Tablet */

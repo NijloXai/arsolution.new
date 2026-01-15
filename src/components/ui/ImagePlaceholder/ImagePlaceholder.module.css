@@ -4,19 +4,19 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xl);
   overflow: hidden;
 }
 
 /* Variantes */
 .light {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-background-alt);
   color: var(--color-gray-400);
 }
 
 .dark {
-  background-color: var(--color-gray-800);
-  color: var(--color-gray-500);
+  background-color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Icône */

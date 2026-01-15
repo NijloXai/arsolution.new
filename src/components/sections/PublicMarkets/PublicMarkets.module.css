@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding-mobile) 0;
-  background: linear-gradient(135deg, var(--color-public) 0%, #1565C0 100%);
+  background: var(--color-primary);
   color: var(--color-white);
 }
 
@@ -58,11 +58,11 @@
   width: 48px;
   height: 48px;
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
 }
 
 .featureIcon svg {
-  color: var(--color-white);
+  color: var(--color-accent);
 }
 
 .featureTitle {
@@ -102,7 +102,7 @@
   gap: var(--spacing-4);
   padding: var(--spacing-6);
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
 }
 
 .stat {

@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-gray-50);
+  background-color: var(--color-background-alt);
 }
 
 .grid {
@@ -11,16 +11,16 @@
 }
 
 .card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
   padding: var(--spacing-6);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
 }
 
 .iconWrapper {
@@ -29,19 +29,19 @@
   justify-content: center;
   width: 56px;
   height: 56px;
-  background-color: var(--color-primary-light);
-  border-radius: var(--radius-md);
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-4);
 }
 
 .iconWrapper svg {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .cardTitle {
   font-size: var(--text-lg);
   font-weight: var(--font-semibold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-2);
 }
 
@@ -63,13 +63,14 @@
   gap: var(--spacing-2);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
   transition: gap var(--transition-fast);
 }
 
 .learnMore:hover {
   gap: var(--spacing-3);
+  color: var(--color-accent-hover);
 }
 
 .cta {

@@ -2,10 +2,11 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16/10;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   cursor: ew-resize;
   user-select: none;
+  box-shadow: var(--shadow-lg);
 }
 
 .imageWrapper {
@@ -25,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
   color: white;
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
@@ -34,7 +35,7 @@
 }
 
 .placeholderBefore {
-  background: linear-gradient(135deg, #9E9E9E 0%, #BDBDBD 100%);
+  background: linear-gradient(135deg, var(--color-gray-400) 0%, var(--color-gray-300) 100%);
 }
 
 /* Labels */
@@ -102,5 +103,5 @@
 }
 
 .sliderHandle svg {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }

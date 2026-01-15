@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
 }
 
 /* Stats Bar */
@@ -10,8 +10,8 @@
   align-items: center;
   gap: var(--spacing-4);
   padding: var(--spacing-6);
-  background-color: var(--color-gray-50);
-  border-radius: var(--radius-lg);
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-xl);
   margin-bottom: var(--spacing-8);
 }
 
@@ -24,7 +24,7 @@
 .ratingValue {
   font-size: var(--text-4xl);
   font-weight: var(--font-bold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .stars {
@@ -69,8 +69,13 @@
 
 .card {
   padding: var(--spacing-6);
-  background-color: var(--color-gray-50);
-  border-radius: var(--radius-lg);
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-smooth);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .cardHeader {
@@ -86,7 +91,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   color: var(--color-white);
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
@@ -96,7 +101,7 @@
 .author {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-1);
 }
 

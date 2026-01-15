@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding-mobile) 0;
-  background-color: var(--color-gray-50);
+  background-color: var(--color-background-alt);
 }
 
 .content {
@@ -25,14 +25,14 @@
 
 .infoItem svg {
   flex-shrink: 0;
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin-top: 2px;
 }
 
 .infoTitle {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-1);
 }
 
@@ -43,9 +43,10 @@
 
 /* Cities */
 .cities {
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
   padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
 }
 
 .department {
@@ -59,10 +60,10 @@
 .departmentTitle {
   font-size: var(--text-lg);
   font-weight: var(--font-semibold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-3);
   padding-bottom: var(--spacing-2);
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-accent);
   display: inline-block;
 }
 
@@ -82,7 +83,7 @@
 }
 
 .city svg {
-  color: var(--color-primary);
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 

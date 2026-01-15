@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--color-gray-900);
+  background-color: var(--color-primary);
   color: var(--color-white);
   padding: var(--spacing-12) 0 var(--spacing-6);
 }
@@ -29,15 +29,15 @@
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: var(--color-primary);
-  border-radius: 2px;
+  background-color: var(--color-accent);
+  border-radius: 4px;
   margin-right: var(--spacing-2);
 }
 
 /* Description */
 .description {
   font-size: var(--text-sm);
-  color: var(--color-gray-400);
+  color: rgba(255, 255, 255, 0.7);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--spacing-6);
 }
@@ -54,7 +54,7 @@
   align-items: flex-start;
   gap: var(--spacing-3);
   font-size: var(--text-sm);
-  color: var(--color-gray-300);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -66,7 +66,7 @@
 .contactItem svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* Colonnes */
@@ -91,7 +91,7 @@
 
 .navLink {
   font-size: var(--text-sm);
-  color: var(--color-gray-400);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color var(--transition-fast);
   padding: var(--spacing-1) 0;
@@ -113,11 +113,11 @@
   align-items: center;
   gap: var(--spacing-3);
   font-size: var(--text-sm);
-  color: var(--color-gray-300);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .certification svg {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* Bottom bar */
@@ -126,12 +126,12 @@
   flex-direction: column;
   gap: var(--spacing-4);
   padding-top: var(--spacing-6);
-  border-top: 1px solid var(--color-gray-800);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .copyright {
   font-size: var(--text-sm);
-  color: var(--color-gray-500);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .legal {
@@ -141,7 +141,7 @@
 
 .legal a {
   font-size: var(--text-sm);
-  color: var(--color-gray-500);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
