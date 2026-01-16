@@ -1,0 +1,458 @@
+/* =========================
+   ISOLATION BEFORE/AFTER SLIDER
+   Comparaison visuelle avant/apres isolation
+   ========================= */
+
+.section {
+  padding: var(--spacing-16) 0;
+  background: var(--color-surface);
+}
+
+/* =========================
+   SLIDER CONTAINER
+   ========================= */
+
+.sliderContainer {
+  position: relative;
+  margin-top: var(--spacing-10);
+  height: 450px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  cursor: ew-resize;
+  user-select: none;
+  contain: layout;
+}
+
+/* =========================
+   PANELS
+   ========================= */
+
+.panel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.panelContent {
+  height: 100%;
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Panel Avant - Couleurs froides */
+.panelBefore {
+  z-index: 2;
+  background: linear-gradient(135deg, #E3E8EF 0%, #C7D2E0 50%, #A8B8CB 100%);
+}
+
+.panelBefore .panelContent {
+  background: linear-gradient(180deg, rgba(200, 210, 225, 0.9) 0%, rgba(180, 195, 215, 0.95) 100%);
+}
+
+/* Panel Apres - Couleurs chaudes */
+.panelAfter {
+  z-index: 1;
+  background: linear-gradient(135deg, #FBF6EF 0%, #F5EBD8 50%, #EFE0C5 100%);
+}
+
+.panelAfter .panelContent {
+  background: linear-gradient(180deg, rgba(251, 246, 239, 0.95) 0%, rgba(245, 235, 216, 0.98) 100%);
+}
+
+/* =========================
+   PANEL HEADER
+   ========================= */
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.panelLabel {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.panelBefore .panelLabel {
+  color: #4A5568;
+}
+
+.panelAfter .panelLabel {
+  color: var(--color-primary);
+}
+
+/* =========================
+   TEMPERATURE BADGE
+   ========================= */
+
+.temperature {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+}
+
+.temperatureCold {
+  background: rgba(66, 133, 244, 0.15);
+  color: #2563EB;
+}
+
+.temperatureWarm {
+  background: rgba(201, 152, 90, 0.2);
+  color: var(--color-accent-hover);
+}
+
+/* =========================
+   ILLUSTRATION
+   ========================= */
+
+.illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 150px;
+}
+
+.house {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+
+.houseRoof {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+}
+
+.panelBefore .houseRoof {
+  border-bottom: 40px solid #7B8A9E;
+}
+
+.panelAfter .houseRoof {
+  border-bottom: 40px solid var(--color-accent);
+}
+
+.houseBody {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 55px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panelBefore .houseBody {
+  background: #8B9DB3;
+}
+
+.panelAfter .houseBody {
+  background: var(--color-primary);
+}
+
+.houseWindow {
+  width: 25px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+}
+
+.panelBefore .houseWindow {
+  background: rgba(66, 133, 244, 0.3);
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.4);
+}
+
+.panelAfter .houseWindow {
+  background: rgba(201, 152, 90, 0.5);
+  box-shadow: 0 0 20px rgba(201, 152, 90, 0.6);
+}
+
+/* Snowflakes for cold */
+.snowflakes {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  color: #7B8A9E;
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.snowflakes span:nth-child(2) {
+  transform: translateX(15px);
+}
+
+/* Sun icon for warm */
+.sunIcon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: var(--color-accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* =========================
+   COMFORT BADGE
+   ========================= */
+
+.comfortBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-4);
+  width: fit-content;
+}
+
+.comfortBad {
+  background: rgba(100, 116, 139, 0.15);
+  color: #64748B;
+}
+
+.comfortGood {
+  background: rgba(93, 158, 97, 0.15);
+  color: #5D9E61;
+}
+
+/* =========================
+   INDICATORS LIST
+   ========================= */
+
+.indicators {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.indicatorIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.indicatorNegative .indicatorIcon {
+  background: rgba(212, 93, 93, 0.15);
+  color: #D45D5D;
+}
+
+.indicatorNegative span:last-child {
+  color: #64748B;
+}
+
+.indicatorPositive .indicatorIcon {
+  background: rgba(93, 158, 97, 0.2);
+  color: #5D9E61;
+}
+
+.indicatorPositive span:last-child {
+  color: var(--color-gray-700);
+}
+
+/* =========================
+   SLIDER HANDLE
+   ========================= */
+
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: ew-resize;
+}
+
+.sliderLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: var(--color-white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sliderHandle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  color: var(--color-primary);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.sliderHandle:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   INSTRUCTIONS
+   ========================= */
+
+.instructions {
+  position: absolute;
+  bottom: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-20) 0;
+  }
+
+  .sliderContainer {
+    height: 500px;
+  }
+
+  .panelContent {
+    padding: var(--spacing-10);
+  }
+
+  .panelLabel {
+    font-size: var(--text-3xl);
+  }
+
+  .house {
+    width: 120px;
+    height: 108px;
+  }
+
+  .houseRoof {
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+  }
+
+  .panelBefore .houseRoof {
+    border-bottom: 48px solid #7B8A9E;
+  }
+
+  .panelAfter .houseRoof {
+    border-bottom: 48px solid var(--color-accent);
+  }
+
+  .houseBody {
+    width: 96px;
+    height: 66px;
+  }
+
+  .houseWindow {
+    width: 30px;
+    height: 36px;
+  }
+
+  .indicator {
+    font-size: var(--text-base);
+  }
+
+  .indicatorIcon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--spacing-24) 0;
+  }
+
+  .sliderContainer {
+    height: 550px;
+  }
+
+  .panelContent {
+    padding: var(--spacing-12);
+  }
+
+  .indicators {
+    gap: var(--spacing-3);
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sunIcon {
+    animation: none;
+  }
+
+  .sliderHandle:hover {
+    transform: translate(-50%, -50%);
+  }
+}

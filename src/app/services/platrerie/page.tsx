@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header/Header';
 import ServiceDetailHero from '@/components/sections/ServiceDetailHero/ServiceDetailHero';
 import ServiceScope from '@/components/sections/ServiceScope/ServiceScope';
 import SectionSkeleton from '@/components/ui/SectionSkeleton/SectionSkeleton';
+import StickyBarMobile from '@/components/ui/StickyBarMobile/StickyBarMobile';
 import {
   scopeItems,
   useCases,
@@ -234,6 +235,13 @@ export default function PlatreriePage() {
         <CTAFinal />
       </main>
       <Footer />
+
+      {/* Sticky Bar Mobile */}
+      <StickyBarMobile
+        label="Devis platrerie gratuit"
+        href="/contact?service=platrerie"
+        phoneNumber="03 88 00 00 00"
+      />
     </>
   );
 }

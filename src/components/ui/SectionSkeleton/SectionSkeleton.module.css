@@ -9,6 +9,7 @@
   );
   border-radius: var(--radius-lg);
   margin: var(--spacing-8) 0;
+  contain: layout size;
 }
 
 .shimmer {

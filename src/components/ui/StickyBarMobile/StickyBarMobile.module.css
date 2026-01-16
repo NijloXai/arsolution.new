@@ -1,0 +1,128 @@
+/* =========================
+   STICKY BAR MOBILE
+   Bouton CTA fixe en bas d'ecran sur mobile
+   ========================= */
+
+.stickyBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--spacing-3) var(--spacing-4);
+  box-shadow: 0 -4px 24px rgba(20, 67, 74, 0.12);
+  transform: translateY(100%);
+  transition: transform var(--transition-smooth);
+  display: none;
+}
+
+.stickyBar.visible {
+  transform: translateY(0);
+}
+
+/* =========================
+   CONTENT LAYOUT
+   ========================= */
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  max-width: var(--container-sm);
+  margin: 0 auto;
+}
+
+/* =========================
+   CTA BUTTON
+   ========================= */
+
+.ctaButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  background: var(--gradient-gold);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-gold-soft);
+  min-height: 48px;
+}
+
+.ctaButton:hover,
+.ctaButton:focus {
+  background: var(--gradient-gold-intense);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   PHONE BUTTON
+   ========================= */
+
+.phoneButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  transition: all var(--transition-smooth);
+}
+
+.phoneButton:hover,
+.phoneButton:focus {
+  background: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+
+.phoneButton:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   RESPONSIVE - Mobile only
+   ========================= */
+
+@media (max-width: 767px) {
+  .stickyBar {
+    display: block;
+  }
+
+  /* Safe area pour iPhone avec encoche */
+  .stickyBar {
+    padding-bottom: calc(var(--spacing-3) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stickyBar {
+    transition: none;
+  }
+
+  .ctaButton,
+  .phoneButton {
+    transition: none;
+  }
+}

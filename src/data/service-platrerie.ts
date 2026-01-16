@@ -31,6 +31,10 @@ export interface MethodStep {
   title: string;
   description: string;
   icon: string;
+  link?: {
+    href: string;
+    label: string;
+  };
 }
 
 export interface PlatrerieProject {
