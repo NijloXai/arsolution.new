@@ -279,3 +279,17 @@ export const publicMarketsArguments = [
     text: 'References collectivites et etablissements publics',
   },
 ];
+
+// =========================
+// DONNEES SITE OCCUPE
+// =========================
+
+export const siteOccupeData = {
+  title: 'Specialistes intervention en site occupe',
+  items: [
+    'Bureaux et logements habites',
+    'Ecoles et etablissements publics',
+    'Horaires adaptes a votre activite',
+    'Protection et nettoyage quotidien',
+  ],
+};

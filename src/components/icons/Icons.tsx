@@ -262,6 +262,137 @@ export function FinishIcon({ size = 24, className, ...props }: IconProps) {
   );
 }
 
+export function PuzzleIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.452-.888-.925a2.501 2.501 0 1 0-4.933.926c.053.325-.053.655-.284.885l-1.6 1.6a2.41 2.41 0 0 1-1.707.707 2.41 2.41 0 0 1-1.707-.707l-1.568-1.568a1.007 1.007 0 0 1-.289-.878 2.502 2.502 0 1 0-4.937-.929c-.053.327.06.658.291.889L3.098 17a2.41 2.41 0 0 1-.707 1.707 2.41 2.41 0 0 1-1.707.707" />
+      <path d="M8.5 2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+    </svg>
+  );
+}
+
+export function PiggyBankIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z" />
+      <path d="M2 9v1c0 1.1.9 2 2 2h1" />
+      <path d="M16 11h.01" />
+    </svg>
+  );
+}
+
+export function TrashIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M3 6h18" />
+      <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+      <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+      <line x1="10" y1="11" x2="10" y2="17" />
+      <line x1="14" y1="11" x2="14" y2="17" />
+    </svg>
+  );
+}
+
+export function ClipboardIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+    </svg>
+  );
+}
+
+export function ToolIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
+  );
+}
+
+export function PaintRollerIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <rect x="2" y="3" width="16" height="5" rx="1" />
+      <path d="M18 8v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8" />
+      <path d="M12 12v6" />
+      <rect x="10" y="18" width="4" height="4" rx="1" />
+    </svg>
+  );
+}
+
 // =========================
 // ICONES PROFILS
 // =========================
@@ -804,5 +935,53 @@ export function WhyUsIcon({ type, size = 28 }: { type: string; size?: number }) 
       return <LocationIcon size={size} />;
     default:
       return null;
+  }
+}
+
+// =========================
+// HELPER - Interlocutor Icon Switcher
+// =========================
+
+export function InterlocutorIcon({ type, size = 24 }: { type: string; size?: number }) {
+  switch (type) {
+    case 'users':
+      return <UsersIcon size={size} />;
+    case 'calendar':
+      return <CalendarIcon size={size} />;
+    case 'puzzle':
+      return <PuzzleIcon size={size} />;
+    case 'piggy-bank':
+      return <PiggyBankIcon size={size} />;
+    default:
+      return <UsersIcon size={size} />;
+  }
+}
+
+// =========================
+// HELPER - Method Step Icon Switcher
+// =========================
+
+export function MethodStepIcon({ type, size = 24 }: { type: string; size?: number }) {
+  switch (type) {
+    case 'clipboard':
+      return <ClipboardIcon size={size} />;
+    case 'file-text':
+      return <FileTextIcon size={size} />;
+    case 'tool':
+      return <ToolIcon size={size} />;
+    case 'paint-roller':
+      return <PaintRollerIcon size={size} />;
+    case 'check-circle':
+      return <CheckCircleIcon size={size} />;
+    case 'trash':
+      return <TrashIcon size={size} />;
+    case 'shield':
+      return <ShieldIcon size={size} />;
+    case 'sparkles':
+      return <SparklesIcon size={size} />;
+    case 'calendar':
+      return <CalendarCheckIcon size={size} />;
+    default:
+      return <ShieldIcon size={size} />;
   }
 }

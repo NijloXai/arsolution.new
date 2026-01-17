@@ -14,18 +14,8 @@ import {
   amenagementProjects,
   amenagementFAQ,
   publicMarketsArguments,
+  siteOccupeData,
 } from '@/data/service-amenagement-interieur';
-
-// Donnees pour le badge Site Occupe
-const siteOccupeData = {
-  title: 'Specialistes intervention en site occupe',
-  items: [
-    'Bureaux et logements habites',
-    'Ecoles et etablissements publics',
-    'Horaires adaptes a votre activite',
-    'Protection et nettoyage quotidien',
-  ],
-};
 
 // JSON-LD Structured Data
 const faqSchema = {
