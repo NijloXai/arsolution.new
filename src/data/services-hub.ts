@@ -55,9 +55,9 @@ export const servicesDetailed: ServiceDetail[] = [
       'Amenagement de combles habitables',
     ],
     icon: 'layout',
-    href: '/services/amenagement',
+    href: '/services/amenagement-interieur',
     ctaText: 'Devis Amenagement',
-    ctaHref: '/contact?service=amenagement',
+    ctaHref: '/contact?service=amenagement-interieur',
   },
   {
     id: 'peinture',

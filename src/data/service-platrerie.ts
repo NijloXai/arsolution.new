@@ -10,7 +10,7 @@ export interface ScopeItem {
   id: string;
   title: string;
   description: string;
-  icon: 'wall' | 'ceiling' | 'finish' | 'insulation';
+  icon: 'wall' | 'ceiling' | 'finish' | 'insulation' | 'layout' | 'volume' | 'office' | 'custom';
   link?: {
     href: string;
     label: string;
