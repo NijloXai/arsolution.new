@@ -83,7 +83,7 @@ export const servicesDetailed: ServiceDetail[] = [
       'Revetements speciaux et techniques',
     ],
     icon: 'finish',
-    href: '/services/enduits',
+    href: '/services/enduit-finition',
     ctaText: 'Devis Finitions',
     ctaHref: '/contact?service=enduits',
   },
