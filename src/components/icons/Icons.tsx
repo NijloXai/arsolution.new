@@ -393,6 +393,93 @@ export function PaintRollerIcon({ size = 24, className, ...props }: IconProps) {
   );
 }
 
+export function PaintBrushIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z" />
+      <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7" />
+      <path d="M14.5 17.5 4.5 15" />
+    </svg>
+  );
+}
+
+export function DropletIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+    </svg>
+  );
+}
+
+export function LayersIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </svg>
+  );
+}
+
+export function FrameIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <line x1="22" x2="2" y1="6" y2="6" />
+      <line x1="22" x2="2" y1="18" y2="18" />
+      <line x1="6" x2="6" y1="2" y2="22" />
+      <line x1="18" x2="18" y1="2" y2="22" />
+    </svg>
+  );
+}
+
 // =========================
 // ICONES PROFILS
 // =========================
@@ -971,6 +1058,8 @@ export function MethodStepIcon({ type, size = 24 }: { type: string; size?: numbe
       return <ToolIcon size={size} />;
     case 'paint-roller':
       return <PaintRollerIcon size={size} />;
+    case 'paintbrush':
+      return <PaintBrushIcon size={size} />;
     case 'check-circle':
       return <CheckCircleIcon size={size} />;
     case 'trash':
@@ -983,5 +1072,22 @@ export function MethodStepIcon({ type, size = 24 }: { type: string; size?: numbe
       return <CalendarCheckIcon size={size} />;
     default:
       return <ShieldIcon size={size} />;
+  }
+}
+
+// =========================
+// HELPER - Quality Icon Switcher (PaintQualityDetails)
+// =========================
+
+export function QualityIcon({ type, size = 24 }: { type: string; size?: number }) {
+  switch (type) {
+    case 'droplet':
+      return <DropletIcon size={size} />;
+    case 'layers':
+      return <LayersIcon size={size} />;
+    case 'frame':
+      return <FrameIcon size={size} />;
+    default:
+      return <DropletIcon size={size} />;
   }
 }

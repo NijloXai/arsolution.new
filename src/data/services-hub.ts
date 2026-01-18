@@ -69,7 +69,7 @@ export const servicesDetailed: ServiceDetail[] = [
       'Traitement des facades et exterieurs',
     ],
     icon: 'paint',
-    href: '/services/peinture',
+    href: '/services/peinture-lissage',
     ctaText: 'Devis Peinture',
     ctaHref: '/contact?service=peinture',
   },
