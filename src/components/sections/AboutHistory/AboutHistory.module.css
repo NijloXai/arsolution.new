@@ -1,0 +1,365 @@
+/* =========================
+   ABOUT HISTORY
+   Timeline + Services maillage
+   ========================= */
+
+.section {
+  padding: var(--section-padding-mobile) 0;
+  background: var(--color-cream);
+  position: relative;
+}
+
+/* =========================
+   TIMELINE
+   ========================= */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-12);
+  position: relative;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-5);
+  position: relative;
+}
+
+.timelineYear {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: var(--gradient-gold);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition-luxe);
+}
+
+.timelineItem:hover .timelineYear {
+  transform: scale(1.08);
+  box-shadow:
+    var(--shadow-gold),
+    0 0 0 8px rgba(201, 152, 90, 0.15);
+}
+
+/* Ligne connectrice doree */
+.timelineConnector {
+  position: absolute;
+  left: 35px;
+  top: 72px;
+  width: 2px;
+  height: calc(100% + var(--spacing-8) - 72px);
+  background: linear-gradient(
+    180deg,
+    var(--color-accent) 0%,
+    var(--color-accent-muted) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.timelineContent {
+  flex: 1;
+  padding-top: var(--spacing-4);
+}
+
+.timelineTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-2);
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--transition-smooth);
+}
+
+.timelineItem:hover .timelineTitle {
+  color: var(--color-accent);
+}
+
+.timelineDescription {
+  font-size: var(--text-base);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+/* =========================
+   MISSION
+   ========================= */
+
+.mission {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-champagne) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  margin-bottom: var(--spacing-12);
+  border: 1px solid var(--color-gray-200);
+}
+
+.missionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.missionTitle::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-full);
+}
+
+.missionText {
+  font-size: var(--text-base);
+  color: var(--color-gray-700);
+  line-height: var(--leading-relaxed);
+}
+
+/* =========================
+   SERVICES MAILLAGE
+   ========================= */
+
+.services {
+  margin-top: var(--spacing-8);
+}
+
+.servicesTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-6);
+  text-align: center;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3);
+}
+
+.serviceCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+
+.serviceCard:hover {
+  background: var(--color-champagne);
+  border-color: rgba(201, 152, 90, 0.3);
+  transform: translateX(4px);
+}
+
+.serviceCard:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.serviceIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  color: var(--color-primary);
+  transition: all var(--transition-smooth);
+}
+
+.serviceCard:hover .serviceIcon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.serviceTitle {
+  flex: 1;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-700);
+  transition: color var(--transition-smooth);
+}
+
+.serviceCard:hover .serviceTitle {
+  color: var(--color-primary);
+}
+
+.serviceArrow {
+  flex-shrink: 0;
+  color: var(--color-gray-400);
+  transition: all var(--transition-smooth);
+}
+
+.serviceCard:hover .serviceArrow {
+  color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-padding-tablet) 0;
+  }
+
+  .timelineYear {
+    width: 80px;
+    height: 80px;
+    font-size: var(--text-xl);
+  }
+
+  .timelineConnector {
+    left: 39px;
+    top: 80px;
+    height: calc(100% + var(--spacing-8) - 80px);
+  }
+
+  .timelineTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .mission {
+    padding: var(--spacing-10);
+  }
+
+  .missionTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .missionText {
+    font-size: var(--text-lg);
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4);
+  }
+
+  .serviceTitle {
+    font-size: var(--text-base);
+  }
+}
+
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--section-padding-desktop) 0;
+  }
+
+  .timeline {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    padding-top: var(--spacing-8);
+  }
+
+  .timelineItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    gap: var(--spacing-5);
+  }
+
+  .timelineYear {
+    width: 88px;
+    height: 88px;
+    font-size: var(--text-2xl);
+  }
+
+  /* Connecteur horizontal */
+  .timelineConnector {
+    position: absolute;
+    left: calc(50% + 44px);
+    top: 44px;
+    width: calc(100% - 88px);
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--color-accent) 0%,
+      var(--color-accent-muted) 100%
+    );
+  }
+
+  .timelineItem:last-child .timelineConnector {
+    display: none;
+  }
+
+  .timelineContent {
+    padding-top: 0;
+    max-width: 280px;
+  }
+
+  .mission {
+    padding: var(--spacing-12);
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-4);
+  }
+
+  .serviceCard {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-5);
+  }
+
+  .serviceCard:hover {
+    transform: translateY(-4px);
+  }
+
+  .serviceIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .serviceArrow {
+    display: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .timelineYear,
+  .serviceCard,
+  .serviceIcon,
+  .serviceArrow {
+    transition: none;
+  }
+
+  .serviceCard:hover {
+    transform: none;
+  }
+}
