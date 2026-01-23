@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant AboutPublicMarkets (marches publics sur page A propos).
+  Il affiche une section dediee aux collectivites avec les avantages cles
+  et les liens vers l'espace marches publics et le contact referent.
+  L'utilisateur acheteur public peut acceder a son espace dedie.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import { BuildingLandmarkIcon, CheckIcon } from '@/components/icons/Icons';

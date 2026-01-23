@@ -1,5 +1,11 @@
+/*
+  Ce fichier definit le composant AboutProof (preuves de realisations).
+  Il affiche un slider de projets avant/apres avec des avis clients.
+  L'utilisateur peut voir les transformations et les temoignages.
+*/
 'use client';
 
+// Stockage du projet actif et de l'affichage avant/apres
 import { useState } from 'react';
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
@@ -11,7 +17,9 @@ import { projectProofs, reviews } from '@/data/about';
 import styles from './AboutProof.module.css';
 
 export default function AboutProof() {
+  // Index du projet actuellement affiche dans le slider
   const [activeProject, setActiveProject] = useState(0);
+  // Indique si on affiche l'image "apres" (true) ou "avant" (false)
   const [showAfter, setShowAfter] = useState(true);
 
   const currentProject = projectProofs[activeProject];

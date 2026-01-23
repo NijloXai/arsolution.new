@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit le composant SectionTitle (titre de section) reutilisable.
+  Il affiche un titre avec optionnellement un eyebrow (petit texte au-dessus),
+  une ligne decorative et un sous-titre. Utilise pour tous les en-tetes de sections.
+*/
 import styles from './SectionTitle.module.css';
 
 interface SectionTitleProps {

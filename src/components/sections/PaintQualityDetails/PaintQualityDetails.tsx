@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PaintQualityDetails (details qualite peinture).
+  Il affiche une grille de cartes expliquant les details de finition professionnelle
+  (preparation, application, choix des peintures, etc.).
+  L'utilisateur comprend ce qui distingue un travail professionnel.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import { QualityIcon } from '@/components/icons/Icons';

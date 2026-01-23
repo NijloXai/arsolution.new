@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ProcessSteps (etapes du processus).
+  Il affiche les etapes de la methode de travail de l'entreprise
+  avec un design en timeline (numerotation et connecteurs).
+  L'utilisateur comprend comment se deroule un projet de A a Z.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import { processSteps } from '@/data/process';

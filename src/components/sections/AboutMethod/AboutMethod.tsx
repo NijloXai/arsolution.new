@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant AboutMethod (methode de travail).
+  Il affiche les 6 etapes de la methode de travail en timeline
+  avec un highlight sur l'accompagnement personnalise.
+  L'utilisateur comprend comment se deroule un projet de A a Z.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import {

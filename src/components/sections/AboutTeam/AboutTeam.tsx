@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant AboutTeam (equipe de l'entreprise).
+  Il affiche une description de l'equipe avec une photo et une liste a puces
+  des competences et valeurs de l'equipe.
+  L'utilisateur decouvre les professionnels qui realiseront ses travaux.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder/ImagePlaceholder';

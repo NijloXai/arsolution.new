@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarketsPrestations (prestations marches publics).
+  Il affiche une grille de cartes avec les services adaptes aux marches publics,
+  incluant les types de travaux et les sites d'intervention.
+  L'utilisateur acheteur public peut voir les prestations compatibles marches publics.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

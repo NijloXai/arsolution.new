@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit le composant ImagePlaceholder (placeholder d'image).
+  Il affiche un rectangle gris avec une icone d'image quand l'image reelle n'est pas disponible.
+  Utilise comme fallback en cas d'erreur de chargement d'image ou d'image manquante.
+*/
 import { ImageIcon } from '@/components/icons/Icons';
 import styles from './ImagePlaceholder.module.css';
 

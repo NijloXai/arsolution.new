@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit la page "A propos" de l'entreprise AR+Solution.
+  Il affiche l'histoire de l'entreprise, ses engagements qualite, sa methode de travail,
+  son expertise sur les marches publics, l'equipe et des preuves de realisations.
+  L'utilisateur peut decouvrir les valeurs de l'entreprise et son parcours depuis 2006.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Header from '@/components/layout/Header/Header';

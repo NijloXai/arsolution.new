@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant IsolationRGE (certification RGE et aides).
+  Il affiche le badge RGE, les aides financieres disponibles (MaPrimeRenov, etc.)
+  et un disclaimer sur les conditions d'eligibilite.
+  L'utilisateur decouvre les aides accessibles grace a la certification RGE.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import type { RGEAide } from '@/data/service-isolation';
@@ -55,7 +61,7 @@ export default function IsolationRGE({ aides, disclaimer }: IsolationRGEProps) {
               </div>
               <div className={styles.badgeText}>
                 <span className={styles.badgeTitle}>Certifie RGE</span>
-                <span className={styles.badgeSubtitle}>Reconnu Garant de l'Environnement</span>
+                <span className={styles.badgeSubtitle}>Reconnu Garant de l&apos;Environnement</span>
               </div>
             </div>
             <p className={styles.badgeDescription}>

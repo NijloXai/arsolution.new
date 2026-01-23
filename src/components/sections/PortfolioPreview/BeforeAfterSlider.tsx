@@ -1,5 +1,12 @@
+/*
+  Ce fichier definit le composant BeforeAfterSlider (comparateur avant/apres).
+  Il affiche deux images superposees avec un curseur que l'utilisateur peut deplacer
+  pour comparer l'avant et l'apres d'une realisation.
+  L'utilisateur peut faire glisser le curseur horizontalement pour voir la difference.
+*/
 'use client';
 
+// Stockage de la position du curseur et de l'etat de glissement
 import { useState, useRef, useCallback } from 'react';
 import styles from './BeforeAfterSlider.module.css';
 
@@ -12,10 +19,14 @@ export default function BeforeAfterSlider({
   beforeLabel = 'Avant',
   afterLabel = 'Après',
 }: BeforeAfterSliderProps) {
+  // Position du curseur en pourcentage (0 a 100)
   const [position, setPosition] = useState(50);
+  // Indique si l'utilisateur est en train de glisser le curseur
   const [isDragging, setIsDragging] = useState(false);
+  // Reference vers le conteneur pour calculer la position relative
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Calcule la nouvelle position du curseur en fonction de la position de la souris
   const handleMove = useCallback(
     (clientX: number) => {
       if (!containerRef.current) return;

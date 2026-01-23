@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarketsEntry (entree marches publics).
+  Il affiche un bloc d'acces rapide vers l'espace marches publics
+  avec les avantages cles pour les collectivites.
+  L'utilisateur acheteur public peut acceder a son espace dedie.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import { BuildingLandmarkIcon, CheckIcon } from '@/components/icons/Icons';

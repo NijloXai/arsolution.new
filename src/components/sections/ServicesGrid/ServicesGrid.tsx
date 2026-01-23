@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ServicesGrid (grille des services).
+  Il affiche une grille de cartes detaillees pour chaque service avec
+  les benefices, les fonctionnalites et un lien vers la page de detail.
+  L'utilisateur peut explorer les services et acceder aux pages detaillees.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

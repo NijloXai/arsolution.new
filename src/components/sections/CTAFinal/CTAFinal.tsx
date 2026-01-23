@@ -1,5 +1,12 @@
+/*
+  Ce fichier definit le composant CTAFinal (appel a l'action final).
+  Il affiche un formulaire de demande de devis avec les avantages
+  (devis gratuit, reponse 48h, visite technique).
+  L'utilisateur peut remplir le formulaire pour recevoir un devis gratuit.
+*/
 'use client';
 
+// Stockage des donnees du formulaire et de l'etat d'envoi
 import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import Button from '@/components/ui/Button/Button';
@@ -19,6 +26,7 @@ const projectTypes = [
 ];
 
 export default function CTAFinal() {
+  // Donnees du formulaire (nom, email, telephone, code postal, type de projet)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,9 +34,12 @@ export default function CTAFinal() {
     postalCode: '',
     projectType: '',
   });
+  // Etat de l'envoi du formulaire (idle, loading, success, error)
   const [status, setStatus] = useState<FormStatus>('idle');
+  // Message d'erreur en cas d'echec de l'envoi
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Met a jour les donnees du formulaire a chaque modification d'un champ
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -43,6 +54,7 @@ export default function CTAFinal() {
     }
   };
 
+  // Envoie le formulaire au serveur lors de la soumission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');

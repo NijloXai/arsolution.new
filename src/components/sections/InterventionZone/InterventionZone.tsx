@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant InterventionZone (zone d'intervention).
+  Il affiche la zone geographique couverte par l'entreprise (Alsace)
+  avec la liste des villes principales du Bas-Rhin et du Haut-Rhin.
+  L'utilisateur peut verifier si sa commune est desservie.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import Button from '@/components/ui/Button/Button';

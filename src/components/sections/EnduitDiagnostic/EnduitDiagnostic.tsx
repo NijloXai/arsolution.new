@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant EnduitDiagnostic (diagnostic enduit).
+  Il affiche une comparaison visuelle entre un mur brut et un mur enduit Q4
+  avec les defauts a corriger et les points diagnostiques.
+  L'utilisateur comprend l'importance de la preparation des surfaces.
+*/
 'use client';
 
 import Container from '@/components/ui/Container/Container';

@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ServiceMethod (methode de travail service).
+  Il affiche les etapes de la methode en timeline avec un highlight sur les engagements.
+  Peut inclure un badge "site occupe" pour les interventions en milieu occupe.
+  L'utilisateur comprend le deroulement d'un projet de A a Z.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

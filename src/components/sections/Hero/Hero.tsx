@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant Hero de la page d'accueil.
+  Il affiche le titre principal, la proposition de valeur, les badges de confiance
+  (RGE, garantie decennale, RC Pro) et deux boutons d'action.
+  L'utilisateur peut demander un devis ou acceder a l'espace marches publics.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import styles from './Hero.module.css';

@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ServiceScope (perimetre d'intervention).
+  Il affiche une grille de cartes avec les differents types de travaux realises
+  (cloisons, faux plafonds, doublages, etc.) pour un service donne.
+  L'utilisateur decouvre l'etendue des prestations proposees.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

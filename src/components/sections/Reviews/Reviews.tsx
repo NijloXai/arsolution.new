@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit le composant Reviews (avis clients).
+  Il affiche la note moyenne Google, le nombre d'avis et une grille de temoignages.
+  L'utilisateur peut lire les avis des clients precedents pour se rassurer.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import { StarIcon, GoogleIcon } from '@/components/icons/Icons';

@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ProfileCards (cartes de profil).
+  Il affiche une grille de cartes pour differents profils utilisateurs
+  (particuliers, professionnels, collectivites) avec un lien vers leur espace dedie.
+  L'utilisateur peut cliquer sur sa carte pour acceder a son parcours personnalise.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

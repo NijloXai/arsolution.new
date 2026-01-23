@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit le composant ServiceGallery (galerie service).
+  Il affiche une grille de projets realises avec photo, type, lieu et description.
+  L'utilisateur peut voir des exemples de realisations pour ce service.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import Button from '@/components/ui/Button/Button';

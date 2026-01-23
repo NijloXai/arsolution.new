@@ -1,5 +1,11 @@
+/*
+  Ce fichier definit le composant PortfolioPreview (apercu du portfolio).
+  Il affiche un slider avant/apres avec navigation entre les projets.
+  L'utilisateur peut voir les realisations et comparer l'avant et l'apres.
+*/
 'use client';
 
+// Stockage du projet actuellement affiche
 import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
@@ -10,6 +16,7 @@ import { projects } from '@/data/projects';
 import styles from './PortfolioPreview.module.css';
 
 export default function PortfolioPreview() {
+  // Index du projet actuellement affiche dans le slider
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProject = projects[activeIndex];
 

@@ -1,3 +1,10 @@
+/*
+  Ce fichier definit la page "Marches Publics" destinee aux acheteurs publics et collectivites.
+  Il affiche les prestations compatibles marches publics, les references du secteur public,
+  la methode d'intervention, les certifications et garanties, la zone d'intervention et une FAQ.
+  L'utilisateur (acheteur public) peut decouvrir les services adaptes aux marches publics
+  et demander un chiffrage ou les pieces administratives.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -159,8 +166,8 @@ const InterventionZone = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServiceFAQ = dynamic(
-  () => import('@/components/sections/ServiceFAQ/ServiceFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -281,11 +288,13 @@ export default function MarchesPublicsPage() {
         <InterventionZone />
 
         {/* FAQ Marches publics */}
-        <ServiceFAQ
+        <FAQ
           items={faqItems}
           eyebrow="FAQ Marches Publics"
           title="Questions frequentes"
           subtitle="Les reponses aux interrogations des acheteurs publics et collectivites."
+          variant="alt-background"
+          idPrefix="marches-publics-faq"
         />
 
         {/* CTA final - Contact marches publics */}

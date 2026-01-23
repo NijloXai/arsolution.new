@@ -1,3 +1,10 @@
+/*
+  Ce fichier definit la page du service "Enduit & Finition".
+  Il affiche un diagnostic des problemes de surface, le perimetre d'intervention
+  (ratissage Q3/Q4, enduit Airless, finitions decoratives), la methode de travail,
+  un slider avant/apres, une galerie, l'acces marches publics et une FAQ.
+  L'utilisateur peut demander un devis enduit ou acceder a l'espace marches publics.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -163,8 +170,8 @@ const ServicePublicMarkets = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServiceFAQ = dynamic(
-  () => import('@/components/sections/ServiceFAQ/ServiceFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -304,11 +311,13 @@ export default function EnduitFinitionPage() {
         />
 
         {/* FAQ specifique enduit */}
-        <ServiceFAQ
+        <FAQ
           items={enduitFAQ}
           eyebrow="FAQ Enduit & Finitions"
           title="Questions frequentes sur nos prestations enduit"
           subtitle="Les reponses a vos interrogations sur nos travaux d'enduit et finitions murales."
+          variant="alt-background"
+          idPrefix="enduit-faq"
         />
 
         {/* CTA final */}

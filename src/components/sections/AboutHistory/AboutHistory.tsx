@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant AboutHistory (histoire de l'entreprise).
+  Il affiche une timeline avec les dates cles, la mission de l'entreprise
+  et les liens vers les differents services.
+  L'utilisateur decouvre l'evolution de l'entreprise depuis sa creation.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

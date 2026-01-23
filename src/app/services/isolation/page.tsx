@@ -1,3 +1,10 @@
+/*
+  Ce fichier definit la page du service "Isolation thermique & phonique".
+  Il affiche une comparaison thermique vs phonique, les zones d'intervention,
+  un slider avant/apres, les benefices, les materiaux utilises, la methode de travail,
+  les aides RGE (MaPrimeRenov), une galerie, l'acces marches publics et une FAQ.
+  L'utilisateur peut demander un devis isolation ou acceder a l'espace marches publics.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -184,8 +191,8 @@ const ServicePublicMarkets = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServiceFAQ = dynamic(
-  () => import('@/components/sections/ServiceFAQ/ServiceFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -326,11 +333,13 @@ export default function IsolationPage() {
         />
 
         {/* FAQ specifique isolation */}
-        <ServiceFAQ
+        <FAQ
           items={isolationFAQ}
           eyebrow="FAQ Isolation"
           title="Questions frequentes sur l'isolation"
           subtitle="Les reponses a vos interrogations sur nos travaux d'isolation thermique et phonique."
+          variant="alt-background"
+          idPrefix="isolation-faq"
         />
 
         {/* CTA final */}

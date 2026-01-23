@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarkets (marches publics) pour la page d'accueil.
+  Il affiche une section dediee aux acheteurs publics avec les avantages
+  (dossiers complets, certifications, interlocuteur dedie) et des statistiques.
+  L'utilisateur peut acceder a l'espace marches publics ou contacter l'entreprise.
+*/
 import Container from '@/components/ui/Container/Container';
 import Button from '@/components/ui/Button/Button';
 import styles from './PublicMarkets.module.css';

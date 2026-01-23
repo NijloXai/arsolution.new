@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant AboutHero (hero de la page A propos).
+  Il affiche le titre, la proposition de valeur, les badges de confiance,
+  une image de l'equipe et les boutons d'action.
+  L'utilisateur decouvre l'identite de l'entreprise des l'arrivee sur la page.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder/ImagePlaceholder';

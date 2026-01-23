@@ -1,3 +1,10 @@
+/*
+  Ce fichier definit la page du service "Platrerie & Faux plafonds".
+  Il affiche le perimetre d'intervention (cloisons, faux plafonds, doublages),
+  les cas d'usage par cible (particuliers, professionnels, collectivites),
+  la methode de travail, une galerie de realisations, l'acces marches publics et une FAQ.
+  L'utilisateur peut demander un devis platrerie ou acceder a l'espace marches publics.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -104,8 +111,8 @@ const ServicePublicMarkets = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServiceFAQ = dynamic(
-  () => import('@/components/sections/ServiceFAQ/ServiceFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -224,11 +231,13 @@ export default function PlatreriePage() {
         />
 
         {/* FAQ specifique platrerie */}
-        <ServiceFAQ
+        <FAQ
           items={platrerieFAQ}
           eyebrow="FAQ Platrerie"
           title="Questions frequentes sur nos prestations"
           subtitle="Les reponses a vos interrogations sur nos travaux de platrerie et amenagement interieur."
+          variant="alt-background"
+          idPrefix="platrerie-faq"
         />
 
         {/* CTA final */}

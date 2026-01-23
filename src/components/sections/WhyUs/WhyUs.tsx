@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant WhyUs (pourquoi nous choisir).
+  Il affiche une grille de cartes avec les avantages de l'entreprise
+  (expertise, certifications, accompagnement, etc.).
+  L'utilisateur decouvre les raisons de faire confiance a AR+Solution.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import { WhyUsIcon } from '@/components/icons/Icons';

@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant AboutEngagements (engagements de l'entreprise).
+  Il affiche une grille de 6 cartes avec les promesses qualite de l'entreprise
+  (respect des delais, finitions soignees, etc.).
+  L'utilisateur decouvre les valeurs et engagements de l'equipe.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import {

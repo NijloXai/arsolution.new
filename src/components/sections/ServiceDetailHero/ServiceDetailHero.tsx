@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ServiceDetailHero (hero des pages de service).
+  Il affiche le titre du service, la proposition de valeur, les badges de confiance
+  et les boutons d'action. Reutilisable pour toutes les pages de service detail.
+  L'utilisateur peut demander un devis ou acceder a l'espace marches publics.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import {

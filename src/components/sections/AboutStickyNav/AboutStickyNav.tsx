@@ -1,13 +1,21 @@
+/*
+  Ce fichier definit le composant AboutStickyNav (navigation ancree de la page A propos).
+  Il affiche une barre de navigation sticky avec des liens vers les sections de la page.
+  L'utilisateur peut cliquer sur un lien pour defiler vers la section correspondante.
+*/
 'use client';
 
+// Stockage de la section actuellement visible pour la mise en surbrillance
 import { useState, useEffect } from 'react';
 import Container from '@/components/ui/Container/Container';
 import { navAnchors } from '@/data/about';
 import styles from './AboutStickyNav.module.css';
 
 export default function AboutStickyNav() {
+  // Id de la section actuellement visible dans le viewport
   const [activeSection, setActiveSection] = useState<string>('');
 
+  // Detection automatique de la section visible pour mettre a jour la navigation
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
       root: null,
@@ -35,6 +43,7 @@ export default function AboutStickyNav() {
     return () => observer.disconnect();
   }, []);
 
+  // Gere le clic sur un lien pour defiler en douceur vers la section
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace('#', '');

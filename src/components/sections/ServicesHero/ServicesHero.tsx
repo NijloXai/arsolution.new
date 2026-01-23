@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ServicesHero (hero de la page Services).
+  Il affiche le titre principal, les badges de confiance (RGE, garantie, etc.)
+  et les boutons d'action pour demander un devis ou acceder aux marches publics.
+  L'utilisateur decouvre l'ensemble des services proposes des l'arrivee sur la page.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import {

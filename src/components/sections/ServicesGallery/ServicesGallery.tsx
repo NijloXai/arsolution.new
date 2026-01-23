@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit le composant ServicesGallery (galerie de la page Services).
+  Il affiche une grille de projets recents avec photos, tags et localisation.
+  L'utilisateur peut voir la qualite des realisations et acceder a la page complete.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import Button from '@/components/ui/Button/Button';

@@ -1,52 +1,17 @@
+/*
+  Ce fichier definit le composant IsolationComparison (comparaison isolation).
+  Il affiche deux cartes comparant l'isolation thermique et phonique
+  avec les situations adaptees a chaque type.
+  L'utilisateur comprend quelle isolation correspond a son besoin.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
+import { ThermometerIcon, SoundwaveIcon, CheckIcon } from '@/components/icons/Icons';
 import type { ComparisonCard } from '@/data/service-isolation';
 import styles from './IsolationComparison.module.css';
 
 interface IsolationComparisonProps {
   cards: ComparisonCard[];
-}
-
-function ThermometerIcon({ size = 32 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
-      <path d="M12 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-    </svg>
-  );
-}
-
-function SoundwaveIcon({ size = 32 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M2 12h2" />
-      <path d="M6 8v8" />
-      <path d="M10 4v16" />
-      <path d="M14 6v12" />
-      <path d="M18 8v8" />
-      <path d="M22 12h-2" />
-      <line x1="2" y1="12" x2="4" y2="12" strokeWidth="3" />
-      <line x1="20" y1="12" x2="22" y2="12" strokeWidth="3" />
-    </svg>
-  );
 }
 
 function ComparisonIcon({ type, size = 32 }: { type: string; size?: number }) {
@@ -58,23 +23,6 @@ function ComparisonIcon({ type, size = 32 }: { type: string; size?: number }) {
     default:
       return <ThermometerIcon size={size} />;
   }
-}
-
-function CheckIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
 }
 
 export default function IsolationComparison({ cards }: IsolationComparisonProps) {

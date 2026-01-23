@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarketsMethod (methode marches publics).
+  Il affiche les etapes de la methode de travail adaptee aux marches publics,
+  le badge site occupe et les engagements qualite.
+  L'utilisateur acheteur public comprend l'organisation et le suivi de chantier.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import {

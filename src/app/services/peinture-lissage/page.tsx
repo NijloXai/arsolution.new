@@ -1,3 +1,10 @@
+/*
+  Ce fichier definit la page du service "Peinture & Lissage".
+  Il affiche le perimetre d'intervention (peinture decorative, grands volumes, finitions),
+  les details de qualite (peintures Ecolabel A+), la methode de travail,
+  une galerie de realisations, l'acces marches publics et une FAQ.
+  L'utilisateur peut demander un devis peinture ou acceder a l'espace marches publics.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -145,8 +152,8 @@ const ServicePublicMarkets = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServiceFAQ = dynamic(
-  () => import('@/components/sections/ServiceFAQ/ServiceFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -267,11 +274,13 @@ export default function PeintureLissagePage() {
         />
 
         {/* FAQ specifique peinture */}
-        <ServiceFAQ
+        <FAQ
           items={peintureFAQ}
           eyebrow="FAQ Peinture"
           title="Questions frequentes sur nos prestations peinture"
           subtitle="Les reponses a vos interrogations sur nos travaux de peinture et finitions."
+          variant="alt-background"
+          idPrefix="peinture-faq"
         />
 
         {/* CTA final */}

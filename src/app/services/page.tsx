@@ -1,9 +1,16 @@
+/*
+  Ce fichier definit la page hub "Nos Services" qui presente tous les services proposes.
+  Il affiche un hero, une grille des services detailles, un acces aux marches publics,
+  les etapes du processus, une galerie de realisations, les avantages et une FAQ.
+  L'utilisateur peut naviguer vers chaque page de service detaillee (isolation, platrerie, etc.).
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Header from '@/components/layout/Header/Header';
 import ServicesHero from '@/components/sections/ServicesHero/ServicesHero';
 import ServicesGrid from '@/components/sections/ServicesGrid/ServicesGrid';
 import SectionSkeleton from '@/components/ui/SectionSkeleton/SectionSkeleton';
+import { servicesFAQ } from '@/data/services-hub';
 
 // Lazy load des composants below-the-fold
 const PublicMarketsEntry = dynamic(
@@ -26,8 +33,8 @@ const WhyUs = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServicesFAQ = dynamic(
-  () => import('@/components/sections/ServicesFAQ/ServicesFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -86,7 +93,14 @@ export default function ServicesPage() {
         <WhyUs />
 
         {/* FAQ specifique services */}
-        <ServicesFAQ />
+        <FAQ
+          items={servicesFAQ}
+          eyebrow="FAQ"
+          title="Questions frequentes"
+          subtitle="Les reponses a vos interrogations sur nos services et notre fonctionnement."
+          variant="alt-background"
+          idPrefix="services-faq"
+        />
 
         {/* CTA final */}
         <CTAFinal />

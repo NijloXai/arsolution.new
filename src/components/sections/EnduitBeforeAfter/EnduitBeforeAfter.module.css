@@ -1,6 +1,7 @@
 /* =========================
-   ENDUIT BEFORE/AFTER SLIDER
-   Comparaison visuelle avant/apres enduit
+   ENDUIT BEFORE/AFTER
+   Styles de contenu specifiques a l'enduit
+   Le slider est gere par BeforeAfterSlider
    ========================= */
 
 .section {
@@ -9,56 +10,24 @@
 }
 
 /* =========================
-   SLIDER CONTAINER
+   PANEL CONTENT
    ========================= */
-
-.sliderContainer {
-  position: relative;
-  margin-top: var(--spacing-10);
-  height: 450px;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  cursor: ew-resize;
-  user-select: none;
-  contain: layout;
-}
-
-/* =========================
-   PANELS
-   ========================= */
-
-.panel {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
 
 .panelContent {
   height: 100%;
   padding: var(--spacing-8);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 /* Panel Avant - Couleurs neutres/froides */
 .panelBefore {
-  z-index: 2;
-  background: linear-gradient(135deg, #E8E4E0 0%, #D5CFC8 50%, #C7BFB6 100%);
-  will-change: clip-path;
-}
-
-.panelBefore .panelContent {
   background: linear-gradient(180deg, rgba(232, 228, 224, 0.95) 0%, rgba(213, 207, 200, 0.98) 100%);
 }
 
 /* Panel Apres - Couleurs chaudes/lumineuses */
 .panelAfter {
-  z-index: 1;
-  background: linear-gradient(135deg, #FDFCFB 0%, #F8F5F1 50%, #F3EDE6 100%);
-}
-
-.panelAfter .panelContent {
   background: linear-gradient(180deg, rgba(253, 252, 251, 0.98) 0%, rgba(248, 245, 241, 0.99) 100%);
 }
 
@@ -281,64 +250,6 @@
 }
 
 /* =========================
-   SLIDER HANDLE
-   ========================= */
-
-.slider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  transform: translateX(-50%);
-  z-index: 10;
-  cursor: ew-resize;
-}
-
-.sliderLine {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  background: var(--color-white);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.sliderHandle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: var(--color-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  color: var(--color-accent);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  will-change: transform;
-}
-
-.sliderHandle:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-}
-
-.slider:focus-visible .sliderHandle {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-.sliderHandleActive {
-  transform: translate(-50%, -50%) scale(1.15);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-}
-
-/* =========================
    PROJECT LABEL
    ========================= */
 
@@ -360,36 +271,12 @@
 }
 
 /* =========================
-   INSTRUCTIONS
-   ========================= */
-
-.instructions {
-  position: absolute;
-  bottom: var(--spacing-4);
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.95);
-  padding: var(--spacing-2) var(--spacing-4);
-  border-radius: var(--radius-full);
-  font-family: var(--font-primary);
-  font-size: var(--text-xs);
-  color: var(--color-gray-600);
-  box-shadow: var(--shadow-sm);
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* =========================
    RESPONSIVE - Tablet
    ========================= */
 
 @media (min-width: 768px) {
   .section {
     padding: var(--spacing-20) 0;
-  }
-
-  .sliderContainer {
-    height: 500px;
   }
 
   .panelContent {
@@ -429,10 +316,6 @@
     padding: var(--spacing-24) 0;
   }
 
-  .sliderContainer {
-    height: 550px;
-  }
-
   .panelContent {
     padding: var(--spacing-12);
   }
@@ -444,15 +327,5 @@
 
   .indicators {
     gap: var(--spacing-3);
-  }
-}
-
-/* =========================
-   REDUCED MOTION
-   ========================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .sliderHandle:hover {
-    transform: translate(-50%, -50%);
   }
 }

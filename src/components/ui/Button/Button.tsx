@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit le composant Button (bouton) reutilisable.
+  Il affiche un bouton ou un lien stylise selon la variante choisie (primary, secondary, outline, ghost).
+  L'utilisateur peut cliquer dessus pour effectuer une action ou naviguer vers une autre page.
+*/
 import Link from 'next/link';
 import styles from './Button.module.css';
 

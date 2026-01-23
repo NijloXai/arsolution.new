@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarketsHero (hero de la page Marches Publics).
+  Il affiche le titre, la proposition de valeur pour les acheteurs publics,
+  les badges de confiance et les boutons d'action.
+  L'utilisateur acheteur public comprend l'offre dediee des l'arrivee sur la page.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import {

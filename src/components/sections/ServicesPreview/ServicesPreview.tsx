@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant ServicesPreview (apercu des services).
+  Il affiche une grille de cartes presentant les differents services proposes
+  (platrerie, isolation, peinture, etc.) avec un lien vers chaque page de detail.
+  L'utilisateur peut decouvrir les services et cliquer pour en savoir plus.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

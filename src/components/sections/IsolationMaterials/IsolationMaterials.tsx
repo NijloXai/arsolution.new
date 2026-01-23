@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant IsolationMaterials (materiaux isolation).
+  Il affiche une grille de cartes presentant les differents materiaux isolants
+  avec leurs caracteristiques et usages recommandes.
+  L'utilisateur decouvre les materiaux adaptes a son projet.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import type { MaterialItem } from '@/data/service-isolation';

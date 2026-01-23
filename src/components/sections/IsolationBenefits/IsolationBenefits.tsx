@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant IsolationBenefits (benefices isolation).
+  Il affiche une grille de cartes avec les avantages concrets de l'isolation
+  (economies, confort, valorisation, etc.).
+  L'utilisateur decouvre les benefices d'une bonne isolation.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import type { BenefitItem } from '@/data/service-isolation';

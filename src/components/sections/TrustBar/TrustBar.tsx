@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant TrustBar (barre de confiance).
+  Il affiche des indicateurs de confiance avec icones et chiffres cles
+  (annees d'experience, nombre de projets, certifications, etc.).
+  L'utilisateur voit ces preuves de credibilite juste apres le hero.
+*/
 import Container from '@/components/ui/Container/Container';
 import { TrustIcon } from '@/components/icons/Icons';
 import { trustItems } from '@/data/company';

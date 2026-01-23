@@ -1090,6 +1090,51 @@ export function VolumeIcon({ size = 24, className, ...props }: IconProps) {
   );
 }
 
+export function ThermometerIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
+    </svg>
+  );
+}
+
+export function SoundwaveIcon({ size = 24, className, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden={props['aria-hidden'] ?? true}
+      aria-label={props['aria-label']}
+    >
+      <path d="M2 10v4" />
+      <path d="M6 6v12" />
+      <path d="M10 9v6" />
+      <path d="M14 4v16" />
+      <path d="M18 8v8" />
+      <path d="M22 11v2" />
+    </svg>
+  );
+}
+
 // =========================
 // HELPER - Service Icon Switcher
 // =========================

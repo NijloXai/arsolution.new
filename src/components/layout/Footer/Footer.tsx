@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant Footer (pied de page) du site.
+  Il affiche les informations de l'entreprise (logo, description, contact),
+  les liens de navigation, les services, les certifications et les mentions legales.
+  L'utilisateur peut contacter l'entreprise, naviguer vers les pages ou consulter les mentions legales.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import { companyInfo, navigation } from '@/data/company';

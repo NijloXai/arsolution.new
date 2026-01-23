@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarketsCompliance (conformite marches publics).
+  Il affiche les certifications et garanties necessaires pour les marches publics
+  (RGE, garantie decennale, RC Pro) avec un bouton pour demander les documents.
+  L'utilisateur acheteur public peut voir les certifications et demander les pieces.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import Button from '@/components/ui/Button/Button';

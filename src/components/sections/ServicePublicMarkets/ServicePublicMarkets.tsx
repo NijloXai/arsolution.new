@@ -1,3 +1,8 @@
+/*
+  Ce fichier definit la section Marches Publics pour les pages de services.
+  Il affiche les garanties et avantages pour les acheteurs publics et architectes.
+  L'utilisateur peut cliquer sur le bouton pour contacter le service dedie.
+*/
 import Button from '@/components/ui/Button/Button';
 import Container from '@/components/ui/Container/Container';
 import { BuildingLandmarkIcon, CheckIcon } from '@/components/icons/Icons';

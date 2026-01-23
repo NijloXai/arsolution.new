@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant PublicMarketsReferences (references marches publics).
+  Il affiche une grille de cartes avec les realisations secteur public
+  (ecoles, mairies, bureaux, ERP) avec localisation et type de travaux.
+  L'utilisateur acheteur public peut voir des exemples de chantiers realises.
+*/
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
 import Button from '@/components/ui/Button/Button';

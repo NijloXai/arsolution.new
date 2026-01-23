@@ -1,3 +1,10 @@
+/*
+  Ce fichier definit la page du service "Amenagement interieur".
+  Il affiche les types de projets (redistribution, combles, bureaux),
+  les cas d'usage par cible, l'avantage de l'interlocuteur unique,
+  la methode de travail, une galerie, l'acces marches publics et une FAQ.
+  L'utilisateur peut demander un devis amenagement ou acceder a l'espace marches publics.
+*/
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -161,8 +168,8 @@ const ServicePublicMarkets = dynamic(
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
-const ServiceFAQ = dynamic(
-  () => import('@/components/sections/ServiceFAQ/ServiceFAQ'),
+const FAQ = dynamic(
+  () => import('@/components/sections/FAQ/FAQ'),
   { loading: () => <SectionSkeleton height="400px" /> }
 );
 
@@ -297,11 +304,13 @@ export default function AmenagementInterieurPage() {
         />
 
         {/* FAQ specifique amenagement */}
-        <ServiceFAQ
+        <FAQ
           items={amenagementFAQ}
           eyebrow="FAQ Amenagement"
           title="Questions frequentes sur l'amenagement interieur"
           subtitle="Les reponses a vos interrogations sur nos travaux d'amenagement et de redistribution de pieces."
+          variant="alt-background"
+          idPrefix="amenagement-faq"
         />
 
         {/* CTA final */}

@@ -1,5 +1,12 @@
+/*
+  Ce fichier definit le composant Header (en-tete) du site.
+  Il affiche le logo, la navigation principale, le telephone et le bouton "Demander un devis".
+  Sur mobile, il affiche un menu hamburger qui ouvre un menu plein ecran.
+  L'utilisateur peut naviguer vers les differentes pages ou appeler directement l'entreprise.
+*/
 'use client';
 
+// Stockage de l'etat du menu mobile et du scroll
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button/Button';
@@ -8,9 +15,12 @@ import { navigation, companyInfo } from '@/data/company';
 import styles from './Header.module.css';
 
 export default function Header() {
+  // Indique si le menu mobile est ouvert ou ferme
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Indique si la page a ete scrollee (pour changer le style du header)
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Detection automatique du scroll pour appliquer un style different au header
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -20,10 +30,12 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Ouvre ou ferme le menu mobile au clic sur le bouton hamburger
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Ferme le menu mobile (utilise lors d'un clic sur un lien)
   const closeMenu = () => {
     setIsMenuOpen(false);
   };

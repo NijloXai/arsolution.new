@@ -1,0 +1,146 @@
+/* =========================
+   BEFORE/AFTER SLIDER - Composant generique
+   Gere la logique du slider, les composants parents
+   fournissent le contenu visuel
+   ========================= */
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: pan-y pinch-zoom;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-gray-100);
+}
+
+/* Panels */
+.panel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.panelAfter {
+  z-index: 1;
+}
+
+.panelBefore {
+  z-index: 2;
+}
+
+/* Slider Line & Handle */
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+}
+
+.sliderLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: var(--color-surface);
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.sliderHandle {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-surface);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sliderHandle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sliderHandleActive {
+  transform: scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Instructions */
+.instructions {
+  position: absolute;
+  bottom: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: var(--spacing-2) var(--spacing-4);
+  background: rgba(20, 67, 74, 0.85);
+  color: var(--color-surface);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE - Tablet
+   ========================= */
+
+@media (min-width: 768px) {
+  .sliderContainer {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-3xl);
+  }
+
+  .sliderHandle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .instructions {
+    font-size: var(--text-base);
+    padding: var(--spacing-3) var(--spacing-5);
+  }
+}
+
+/* =========================
+   RESPONSIVE - Desktop
+   ========================= */
+
+@media (min-width: 1024px) {
+  .sliderHandle {
+    width: 64px;
+    height: 64px;
+  }
+
+  .sliderHandle svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sliderHandle {
+    transition: none;
+  }
+}

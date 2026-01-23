@@ -1,5 +1,12 @@
+/*
+  Ce fichier definit le composant PublicMarketsCTAFinal (CTA final marches publics).
+  Il affiche un formulaire de contact dedie aux acheteurs publics avec les coordonnees
+  directes et les avantages (reponse 24-48h, dossier complet, etc.).
+  L'utilisateur acheteur public peut envoyer une demande de chiffrage ou contacter l'equipe.
+*/
 'use client';
 
+// Stockage des donnees du formulaire et de l'etat d'envoi
 import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import Button from '@/components/ui/Button/Button';
@@ -25,6 +32,7 @@ const projectTypes = [
 ];
 
 export default function PublicMarketsCTAFinal() {
+  // Donnees du formulaire (organisme, contact, email, telephone, type, lieu, message)
   const [formData, setFormData] = useState({
     organisme: '',
     name: '',
@@ -34,9 +42,12 @@ export default function PublicMarketsCTAFinal() {
     location: '',
     message: '',
   });
+  // Etat de l'envoi du formulaire (idle, loading, success, error)
   const [status, setStatus] = useState<FormStatus>('idle');
+  // Message d'erreur en cas d'echec de l'envoi
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Met a jour les donnees du formulaire a chaque modification d'un champ
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
@@ -50,6 +61,7 @@ export default function PublicMarketsCTAFinal() {
     }
   };
 
+  // Envoie le formulaire au serveur lors de la soumission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');

@@ -1,3 +1,9 @@
+/*
+  Ce fichier definit le composant UniqueInterlocutor (interlocuteur unique).
+  Il affiche une comparaison entre travailler avec 3 artisans differents
+  et avoir un seul interlocuteur avec AR+Solution.
+  L'utilisateur comprend l'avantage d'un expert global.
+*/
 import Link from 'next/link';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';

@@ -1,5 +1,12 @@
+/*
+  Ce fichier definit le composant ServiceUseCases (cas d'usage par cible).
+  Il affiche des onglets pour differents profils (collectivites, pros, particuliers)
+  avec les avantages et points cles specifiques a chaque cible.
+  L'utilisateur peut choisir son profil pour voir les solutions adaptees.
+*/
 'use client';
 
+// Stockage de l'onglet actif
 import { useState } from 'react';
 import Container from '@/components/ui/Container/Container';
 import SectionTitle from '@/components/ui/SectionTitle/SectionTitle';
@@ -25,6 +32,7 @@ function UseCaseIcon({ id, size = 24 }: { id: string; size?: number }) {
 }
 
 export default function ServiceUseCases({ useCases }: ServiceUseCasesProps) {
+  // Id du cas d'usage actuellement selectionne
   const [activeId, setActiveId] = useState(useCases[0]?.id || '');
 
   const activeCase = useCases.find((uc) => uc.id === activeId);
